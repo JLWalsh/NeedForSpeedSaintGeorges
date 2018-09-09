@@ -380,7 +380,6 @@ MonoBehaviour:
   powered: 1
   braking: 1
   handbraking: 1
-  isSpinning: 0
   mesh: {fileID: 1497864315}
 --- !u!1 &169138759
 GameObject:
@@ -579,7 +578,6 @@ MonoBehaviour:
   powered: 1
   braking: 1
   handbraking: 1
-  isSpinning: 0
   mesh: {fileID: 2096344631}
 --- !u!1 &323132173
 GameObject:
@@ -874,7 +872,6 @@ MonoBehaviour:
   powered: 0
   braking: 1
   handbraking: 0
-  isSpinning: 0
   mesh: {fileID: 85654750}
 --- !u!1 &697756298
 GameObject:
@@ -1185,6 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606116f24c5c3a442aaa4be360f9940d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rpm: 0
   torqueCurve:
     serializedVersion: 2
     m_Curve:
@@ -1221,6 +1219,7 @@ MonoBehaviour:
   peakTorque: 900
   maxRpm: 6500
   idleSpeed: 900
+  rpmGainSpeed: 250
 --- !u!114 &929262513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,7 +1486,6 @@ MonoBehaviour:
   powered: 0
   braking: 1
   handbraking: 0
-  isSpinning: 0
   mesh: {fileID: 1488693790}
 --- !u!1 &1488693789
 GameObject:

@@ -9,14 +9,11 @@ public class CombustionEngine : Engine {
     public float maxRpm;
 
     public float idleSpeed;
+    public float rpmGainSpeed;
 
-    private float previousRpm;
-
-    public override float GetTorque()
+    protected override float GetTorque()
     {
-        float rpm = GetRpm();
-
-        if(rpm >= maxRpm)
+        if(IsRedlining())
         {
             return 0;
         }
@@ -24,13 +21,37 @@ public class CombustionEngine : Engine {
         return torqueCurve.Evaluate(rpm / maxRpm) * peakTorque;
     }
 
-    protected float GetRpm()
+    protected override float GetRpm()
     {
         if (!transmission.IsEngaged())
         {
-            return idleSpeed;
+            return rpm;
         }
 
         return Mathf.Max(idleSpeed, transmission.GetRpm());
+    }
+
+    protected override void UpdateRpmWithoutTransmission()
+    {
+        float throttle = throttleController.GetThrottle();
+
+        if (throttle == 0)
+        {
+            rpm -= rpmGainSpeed;
+        } else {
+            rpm += rpmGainSpeed * throttleController.GetThrottle();
+        }
+
+        rpm = NormalizeRpms(rpm);
+    }
+
+    private float NormalizeRpms(float rpm)
+    {
+        return Mathf.Clamp(rpm, idleSpeed, maxRpm);
+    }
+
+    private bool IsRedlining()
+    {
+        return rpm >= maxRpm;
     }
 }

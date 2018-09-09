@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Engine : MonoBehaviour {
 
+    public float rpm;
     protected Transmission transmission;
-
-    private ThrottleController throttleController;
+    protected ThrottleController throttleController;
 
     private void Awake()
     {
@@ -16,10 +16,21 @@ public abstract class Engine : MonoBehaviour {
 
     private void Update()
     {
+        rpm = GetRpm();
+
         float torque = GetTorque() * throttleController.GetThrottle();
+
+        if(!transmission.IsEngaged())
+        {
+            UpdateRpmWithoutTransmission();
+        }
 
         transmission.InputTorque(torque);
     }
 
-    public abstract float GetTorque();
+    protected abstract float GetTorque();
+
+    protected abstract float GetRpm();
+
+    protected abstract void UpdateRpmWithoutTransmission();
 }
