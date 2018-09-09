@@ -35,13 +35,13 @@ public class CombustionEngine : Engine {
 
     protected override void UpdateRpmWithoutTransmission()
     {
-        float throttle = throttleController.GetThrottle();
+        float throttle = vehicleInput.GetThrottle();
 
         if (throttle == 0)
         {
             rpm -= rpmGainSpeed;
         } else {
-            rpm += rpmGainSpeed * throttleController.GetThrottle();
+            rpm += rpmGainSpeed * vehicleInput.GetThrottle();
         }
 
         rpm = ApplyRpmLimits(rpm);

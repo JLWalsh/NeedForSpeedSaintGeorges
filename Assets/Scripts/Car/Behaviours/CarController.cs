@@ -7,26 +7,45 @@ public class CarController : MonoBehaviour {
 
     public float maxSteerAngle;
 
+    public float brakeTorque;
+    public float handbrakeTorque;
+
     private Wheel[] wheels;
+
+    private VehicleInput vehicleInput;
 
 	void Start () {
         wheels = GetComponentsInChildren<Wheel>();
+        vehicleInput = GetComponent<VehicleInput>();
 	}
 	
 	void Update () {
-        HandleSteering();
-	}
-
-    private void HandleSteering()
-    {
+        float brakeTorqueToApply = vehicleInput.GetBraking() * brakeTorque;
         float steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
 
-        foreach(Wheel wheel in wheels)
+        foreach (Wheel wheel in wheels)
         {
-            if(wheel.steering)
+
+            if (wheel.steering)
             {
                 wheel.WheelCollider.steerAngle = steerAngle;
             }
+
+            if(wheel.braking)
+            {
+                wheel.WheelCollider.brakeTorque = brakeTorqueToApply;
+            }
+
+            if(wheel.handbraking && vehicleInput.IsHandbraking())
+            {
+                wheel.WheelCollider.brakeTorque = handbrakeTorque;
+
+                if(wheel.braking)
+                {
+                    wheel.WheelCollider.brakeTorque += brakeTorqueToApply;
+                }
+            }
         }
-    }
+	}
+
 }

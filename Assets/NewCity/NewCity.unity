@@ -1630,6 +1630,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114510941697291372, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: brakeTorque
+      value: 35000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114699689451447782, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: stepsAbove
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
   m_IsPrefabAsset: 0

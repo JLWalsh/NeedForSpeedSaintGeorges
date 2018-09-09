@@ -17,13 +17,13 @@ public class AutomaticTransmission : Transmission
     public float downshiftRpm;
     public float maxThrottleForDownshift;
 
-    private ThrottleController throttleController;
+    private VehicleInput vehicleInput;
     private Timer timer;
 
     private void Start()
     {
         timer = Timer.OfSeconds(timeBetweenShifts);
-        throttleController = GetComponent<ThrottleController>();
+        vehicleInput = GetComponent<VehicleInput>();
     }
 
     private void Update()
@@ -38,7 +38,7 @@ public class AutomaticTransmission : Transmission
             TryUpshift();
         }
 
-        if (rpm <= downshiftRpm && throttleController.GetThrottle() < maxThrottleForDownshift && timer.CanBeTriggered())
+        if (rpm <= downshiftRpm && vehicleInput.GetThrottle() < maxThrottleForDownshift && timer.CanBeTriggered())
         {
             timer.Reset();
             TryDownshift();
@@ -61,7 +61,7 @@ public class AutomaticTransmission : Transmission
 
     protected override float GetOutputtedTorque(float torqueToForward)
     {
-        if (throttleController.IsReversing() && drive != Drive.REVERSE)
+        if (vehicleInput.IsReversing() && drive != Drive.REVERSE)
             return 0f;
 
         return torqueToForward * GetCurrentGearRatio();
@@ -95,13 +95,13 @@ public class AutomaticTransmission : Transmission
 
     private void UpdateCurrentDrive(float rpm)
     {
-        float throttle = throttleController.GetThrottle();
+        float throttle = vehicleInput.GetThrottle();
 
-        if(throttle > 0f && !throttleController.IsReversing())
+        if(throttle > 0f && !vehicleInput.IsReversing())
         {
             drive = Drive.FORWARD;
         } else if(rpm <= MAX_DIFF_RPM_TO_CONSIDER_NOT_MOVING) {
-            if(throttleController.IsReversing())
+            if(vehicleInput.IsReversing())
             {
                 drive = Drive.REVERSE;
             } else if(throttle == 0f)

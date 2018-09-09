@@ -5,17 +5,17 @@ using UnityEngine;
 public abstract class Engine : MonoBehaviour {
 
     protected Transmission transmission;
-    protected ThrottleController throttleController;
+    protected VehicleInput vehicleInput;
 
     private void Awake()
     {
         transmission = GetComponent<Transmission>();
-        throttleController = GetComponent<ThrottleController>();
+        vehicleInput = GetComponent<VehicleInput>();
     }
 
     private void Update()
     {
-        float torque = GetTorque() * throttleController.GetThrottle();
+        float torque = GetTorque() * vehicleInput.GetThrottle();
 
         if(transmission.GetDrive() == Transmission.Drive.NEUTRAL)
         {

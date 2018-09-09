@@ -262,27 +262,27 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Throttle
+    m_Name: Acceleration
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: s
     positiveButton: w
     altNegativeButton: 
     altPositiveButton: space
-    gravity: 1000
+    gravity: 3
     dead: 0.001
-    sensitivity: 1000
+    sensitivity: 3
     snap: 0
     invert: 0
     type: 0
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Cancel
+    m_Name: Handbrake
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: escape
+    positiveButton: space
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
