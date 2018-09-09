@@ -9,19 +9,20 @@ public class Wheel : MonoBehaviour {
     public bool braking;
     public bool handbraking;
 
-    public bool isSpinning;
-
     public Transform mesh;
 
-    private WheelCollider wheelCollider;
-    private Rigidbody parentRigidbody;
+    private bool isSpinning;
     private float colliderCircumference;
 
+    private WheelCollider wheelCollider;
+    private Rigidbody attachedRigidbody;
+
     public WheelCollider WheelCollider { get { return wheelCollider; } }
+    public bool IsSpinning { get { return isSpinning; } }
 
     private void Awake()
     {
-        parentRigidbody = GetComponentInParent<Rigidbody>();
+        attachedRigidbody = GetComponentInParent<Rigidbody>();
         wheelCollider = GetComponentInChildren<WheelCollider>();
 
         colliderCircumference = Mathf.Pow(wheelCollider.radius, 2) * Mathf.PI;  
@@ -46,12 +47,11 @@ public class Wheel : MonoBehaviour {
 
     private void CheckIsSpinning()
     {
-        float speedUnitsPerMinute = parentRigidbody.velocity.magnitude * 60f;
+        float speedUnitsPerMinute = attachedRigidbody.velocity.magnitude * 60f;
         float speedAtWheelRpm = wheelCollider.rpm * colliderCircumference;
 
         float speedDifference = speedAtWheelRpm - speedUnitsPerMinute;
 
         isSpinning = speedDifference > 0.1f;
-        Debug.Log(isSpinning);
     }
 }

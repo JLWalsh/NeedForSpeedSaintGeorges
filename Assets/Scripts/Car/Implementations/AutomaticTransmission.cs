@@ -11,6 +11,7 @@ public class AutomaticTransmission : Transmission
 
     public float shiftRpm;
     public float downshiftRpm;
+    public float maxThrottleForDownshift;
 
     private ThrottleController throttleController;
     private Timer timer;
@@ -21,27 +22,29 @@ public class AutomaticTransmission : Transmission
         throttleController = GetComponent<ThrottleController>();
     }
 
-    private void Update()
+    protected override void UpdateGearing()
     {
         timer.Update();
-    }
 
-    public override float GetRpm()
-    {
         float rpm = differential.GetRpm() * GetCurrentGearRatio();
-        
-        if(rpm >= shiftRpm && timer.CanBeTriggered())
+
+        if (rpm >= shiftRpm && timer.CanBeTriggered())
         {
             timer.Reset();
             TryUpshift();
         }
 
-        if(rpm <= downshiftRpm && throttleController.GetThrottle() < 0.2 && timer.CanBeTriggered())
+        if (rpm <= downshiftRpm && throttleController.GetThrottle() < maxThrottleForDownshift && timer.CanBeTriggered())
         {
             timer.Reset();
             TryDownshift();
         }
+    }
 
+    public override float GetRpm()
+    {
+        float rpm = differential.GetRpm() * GetCurrentGearRatio();
+      
         return rpm;
     }
 
@@ -50,12 +53,9 @@ public class AutomaticTransmission : Transmission
         return engaged;
     }
 
-    public override void OutputTorque(float inputTorque)
+    protected override void OutputTorque(float inputTorque)
     {
-        if (!this.engaged)
-            return;
-
-        differential.OutputTorque(inputTorque * GetCurrentGearRatio());
+        differential.InputTorque(inputTorque * GetCurrentGearRatio());
     }
 
     private void TryUpshift()
@@ -78,4 +78,5 @@ public class AutomaticTransmission : Transmission
     {
         return gears[currentGear];
     }
+
 }

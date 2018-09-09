@@ -11,10 +11,24 @@ public abstract class Transmission : MonoBehaviour {
         differential = GetComponent<Differential>();
     }
 
+    private void Update()
+    {
+        UpdateGearing();
+    }
+
     public abstract bool IsEngaged();
 
     public abstract float GetRpm();
 
-    public abstract void OutputTorque(float inputTorque);
+    public void InputTorque(float inputTorque)
+    {
+        if(IsEngaged())
+        {
+            OutputTorque(inputTorque);
+        }
+    }
 
+    protected abstract void OutputTorque(float inputTorque);
+
+    protected abstract void UpdateGearing();
 }

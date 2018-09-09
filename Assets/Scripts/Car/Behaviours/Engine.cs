@@ -16,10 +16,9 @@ public abstract class Engine : MonoBehaviour {
 
     private void Update()
     {
-        float throttle = throttleController.GetThrottle();
-        float torque = GetTorque() * throttle;
+        float torque = GetTorque() * throttleController.GetThrottle();
 
-        transmission.OutputTorque(torque);
+        transmission.InputTorque(torque);
     }
 
     public abstract float GetTorque();

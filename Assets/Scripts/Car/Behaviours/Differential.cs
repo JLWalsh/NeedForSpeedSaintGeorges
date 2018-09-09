@@ -7,7 +7,7 @@ public abstract class Differential : MonoBehaviour {
     public Wheel rightWheel;
     public Wheel leftWheel;
 
-    public abstract void OutputTorque(float inputTorque);
+    public abstract void InputTorque(float inputTorque);
 
     public abstract float GetRpm();
 

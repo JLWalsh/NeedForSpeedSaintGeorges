@@ -10,19 +10,21 @@ public class CombustionEngine : Engine {
 
     public float idleSpeed;
 
+    private float previousRpm;
+
     public override float GetTorque()
     {
-        float engineRpm = GetRpm();
+        float rpm = GetRpm();
 
-        if(engineRpm >= maxRpm)
+        if(rpm >= maxRpm)
         {
             return 0;
         }
 
-        return torqueCurve.Evaluate(engineRpm / maxRpm) * peakTorque;
+        return torqueCurve.Evaluate(rpm / maxRpm) * peakTorque;
     }
 
-    private float GetRpm()
+    protected float GetRpm()
     {
         if (!transmission.IsEngaged())
         {
