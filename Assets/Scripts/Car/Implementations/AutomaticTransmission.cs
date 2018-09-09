@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class AutomaticTransmission : Transmission
 {
+    private static readonly int REVERSE_GEAR = -1;
+    private static readonly float MAX_DIFF_RPM_TO_ENTER_REVERSE = 150f;
+
     public float[] gears;
+    public float reverseGear;
     public bool engaged;
     public int currentGear;
     public float timeBetweenShifts;
@@ -39,6 +43,11 @@ public class AutomaticTransmission : Transmission
             timer.Reset();
             TryDownshift();
         }
+
+        if (rpm <= MAX_DIFF_RPM_TO_ENTER_REVERSE && throttleController.IsReversing())
+        {
+            Reverse();
+        }
     }
 
     public override float GetRpm()
@@ -53,9 +62,12 @@ public class AutomaticTransmission : Transmission
         return engaged;
     }
 
-    protected override void OutputTorque(float inputTorque)
+    protected override void OutputTorque(float outputTorque)
     {
-        differential.InputTorque(inputTorque * GetCurrentGearRatio());
+        if (throttleController.IsReversing() && currentGear != REVERSE_GEAR)
+            return;
+
+        differential.InputTorque(outputTorque * GetCurrentGearRatio());
     }
 
     private void TryUpshift()
@@ -74,8 +86,18 @@ public class AutomaticTransmission : Transmission
         }
     }
 
+    private void Reverse()
+    {
+        currentGear = REVERSE_GEAR;
+    }
+
     private float GetCurrentGearRatio()
     {
+        if(currentGear == REVERSE_GEAR)
+        {
+            return -reverseGear;
+        }
+
         return gears[currentGear];
     }
 

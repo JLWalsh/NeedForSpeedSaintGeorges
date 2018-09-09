@@ -6,7 +6,12 @@ public class ThrottleController : MonoBehaviour {
 
     public float GetThrottle()
     {
-        return Input.GetAxis("Throttle");
+        return Mathf.Abs(Input.GetAxis("Throttle"));
+    }
+
+    public bool IsReversing()
+    {
+        return Input.GetAxis("Throttle") < 0f;
     }
 
 }

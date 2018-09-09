@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour {
 
+    public float maxSteerAngle;
+
     private Wheel[] wheels;
 
 	void Start () {
@@ -17,7 +19,7 @@ public class CarController : MonoBehaviour {
 
     private void HandleSteering()
     {
-        float steerAngle = Input.GetAxis("Horizontal") * 10f;
+        float steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle;
 
         foreach(Wheel wheel in wheels)
         {

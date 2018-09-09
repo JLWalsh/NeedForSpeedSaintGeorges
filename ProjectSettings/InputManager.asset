@@ -265,7 +265,7 @@ InputManager:
     m_Name: Throttle
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
+    negativeButton: s
     positiveButton: w
     altNegativeButton: 
     altPositiveButton: space
