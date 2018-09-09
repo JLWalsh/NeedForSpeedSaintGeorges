@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class Differential : MonoBehaviour {
 
-    public WheelCollider rightWheel;
-    public WheelCollider leftWheel;
+    public Wheel rightWheel;
+    public Wheel leftWheel;
 
     public abstract void OutputTorque(float inputTorque);
 

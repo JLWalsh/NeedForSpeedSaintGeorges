@@ -41,7 +41,7 @@ public class AutomaticTransmission : Transmission
             timer.Reset();
             TryDownshift();
         }
-        Debug.Log(rpm);
+
         return rpm;
     }
 
