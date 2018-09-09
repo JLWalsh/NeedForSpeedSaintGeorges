@@ -6,19 +6,6 @@ public class FiftyFiftyDifferential : Differential
 {
     public float gearRatio;
 
-    private void Update()
-    {
-        if(Input.GetAxis("Vertical") < 0f)
-        {
-            leftWheel.WheelCollider.brakeTorque = 100000f;
-            rightWheel.WheelCollider.brakeTorque = 100000f;
-        } else
-        {
-            leftWheel.WheelCollider.brakeTorque = 0f;
-            rightWheel.WheelCollider.brakeTorque = 0f;
-        }
-    }
-
     public override float GetRpm()
     {
         return (leftWheel.WheelCollider.rpm + rightWheel.WheelCollider.rpm) * gearRatio;
@@ -28,7 +15,6 @@ public class FiftyFiftyDifferential : Differential
     {
         float outputTorque = inputTorque * gearRatio;
 
-        Debug.Log(outputTorque);
 
         if(leftWheel.powered)
         {

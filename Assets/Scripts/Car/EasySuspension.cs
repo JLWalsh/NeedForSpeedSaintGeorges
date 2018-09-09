@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// Credit goes to Unity Technologies for this script
 [ExecuteInEditMode]
 public class EasySuspension : MonoBehaviour
 {
