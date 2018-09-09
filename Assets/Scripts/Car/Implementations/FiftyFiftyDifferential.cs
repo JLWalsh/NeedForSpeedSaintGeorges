@@ -11,10 +11,9 @@ public class FiftyFiftyDifferential : Differential
         return (leftWheel.WheelCollider.rpm + rightWheel.WheelCollider.rpm) * gearRatio;
     }
 
-    public override void InputTorque(float inputTorque)
+    public override void ForwardTorque(float inputTorque)
     {
         float outputTorque = inputTorque * gearRatio;
-
 
         if(leftWheel.powered)
         {

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class AutomaticTransmission : Transmission
 {
-    private static readonly int REVERSE_GEAR = -1;
-    private static readonly float MAX_DIFF_RPM_TO_ENTER_REVERSE = 150f;
+    private static readonly float MAX_DIFF_RPM_TO_CONSIDER_NOT_MOVING = 150f;
 
     public float[] gears;
     public float reverseGear;
     public bool engaged;
     public int currentGear;
     public float timeBetweenShifts;
+    public Drive drive;
 
     public float shiftRpm;
     public float downshiftRpm;
@@ -26,7 +26,7 @@ public class AutomaticTransmission : Transmission
         throttleController = GetComponent<ThrottleController>();
     }
 
-    protected override void UpdateGearing()
+    private void Update()
     {
         timer.Update();
 
@@ -44,10 +44,7 @@ public class AutomaticTransmission : Transmission
             TryDownshift();
         }
 
-        if (rpm <= MAX_DIFF_RPM_TO_ENTER_REVERSE && throttleController.IsReversing())
-        {
-            Reverse();
-        }
+        UpdateCurrentDrive(rpm);
     }
 
     public override float GetRpm()
@@ -57,17 +54,17 @@ public class AutomaticTransmission : Transmission
         return rpm;
     }
 
-    public override bool IsEngaged()
+    public override Drive GetDrive()
     {
-        return engaged;
+        return drive;
     }
 
-    protected override void OutputTorque(float outputTorque)
+    protected override float GetOutputtedTorque(float torqueToForward)
     {
-        if (throttleController.IsReversing() && currentGear != REVERSE_GEAR)
-            return;
+        if (throttleController.IsReversing() && drive != Drive.REVERSE)
+            return 0f;
 
-        differential.InputTorque(outputTorque * GetCurrentGearRatio());
+        return torqueToForward * GetCurrentGearRatio();
     }
 
     private void TryUpshift()
@@ -86,19 +83,32 @@ public class AutomaticTransmission : Transmission
         }
     }
 
-    private void Reverse()
-    {
-        currentGear = REVERSE_GEAR;
-    }
-
     private float GetCurrentGearRatio()
     {
-        if(currentGear == REVERSE_GEAR)
+        if(drive == Drive.REVERSE)
         {
             return -reverseGear;
         }
 
         return gears[currentGear];
+    }
+
+    private void UpdateCurrentDrive(float rpm)
+    {
+        float throttle = throttleController.GetThrottle();
+
+        if(throttle > 0f && !throttleController.IsReversing())
+        {
+            drive = Drive.FORWARD;
+        } else if(rpm <= MAX_DIFF_RPM_TO_CONSIDER_NOT_MOVING) {
+            if(throttleController.IsReversing())
+            {
+                drive = Drive.REVERSE;
+            } else if(throttle == 0f)
+            {
+                drive = Drive.NEUTRAL;
+            }
+        }
     }
 
 }

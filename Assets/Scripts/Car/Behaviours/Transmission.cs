@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Transmission : MonoBehaviour {
 
+    public enum Drive { FORWARD, REVERSE, NEUTRAL };
+
     protected Differential differential;
 
     private void Awake()
@@ -11,24 +13,19 @@ public abstract class Transmission : MonoBehaviour {
         differential = GetComponent<Differential>();
     }
 
-    private void Update()
-    {
-        UpdateGearing();
-    }
-
-    public abstract bool IsEngaged();
+    public abstract Drive GetDrive();
 
     public abstract float GetRpm();
 
-    public void InputTorque(float inputTorque)
+    public void ForwardTorque(float torqueToForward)
     {
-        if(IsEngaged())
+        if(GetDrive() != Drive.NEUTRAL)
         {
-            OutputTorque(inputTorque);
+            differential.ForwardTorque(GetOutputtedTorque(torqueToForward));
+        } else {
+            differential.ForwardTorque(0f);
         }
     }
 
-    protected abstract void OutputTorque(float inputTorque);
-
-    protected abstract void UpdateGearing();
+    protected abstract float GetOutputtedTorque(float inputTorque);
 }

@@ -11,6 +11,8 @@ public class CombustionEngine : Engine {
     public float idleSpeed;
     public float rpmGainSpeed;
 
+    private float rpm = 0f;
+
     protected override float GetTorque()
     {
         if(IsRedlining())
@@ -23,7 +25,7 @@ public class CombustionEngine : Engine {
 
     protected override float GetRpm()
     {
-        if (!transmission.IsEngaged())
+        if (transmission.GetDrive() == Transmission.Drive.NEUTRAL)
         {
             return rpm;
         }
@@ -42,10 +44,10 @@ public class CombustionEngine : Engine {
             rpm += rpmGainSpeed * throttleController.GetThrottle();
         }
 
-        rpm = NormalizeRpms(rpm);
+        rpm = ApplyRpmLimits(rpm);
     }
 
-    private float NormalizeRpms(float rpm)
+    private float ApplyRpmLimits(float rpm)
     {
         return Mathf.Clamp(rpm, idleSpeed, maxRpm);
     }
