@@ -1643,22 +1643,22 @@ Prefab:
     - target: {fileID: 146839257510221992, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
       propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 3
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 146532208140142866, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
       propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 3
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 146365028531796742, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
       propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 3
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 146337965540224072, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
       propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 3
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 114510941697291372, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
@@ -1716,6 +1716,21 @@ Prefab:
     - target: {fileID: 4195797179186152, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
       propertyPath: m_LocalPosition.z
       value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114455800049999418, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: torqueCurve.m_Curve.Array.data[0].value
+      value: 0.025001526
+      objectReference: {fileID: 0}
+    - target: {fileID: 114455800049999418, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: torqueCurve.m_Curve.Array.data[1].value
+      value: 0.24134769
+      objectReference: {fileID: 0}
+    - target: {fileID: 114455800049999418, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: torqueCurve.m_Curve.Array.data[2].value
+      value: 1.0250015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}

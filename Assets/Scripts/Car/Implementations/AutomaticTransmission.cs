@@ -8,7 +8,6 @@ public class AutomaticTransmission : Transmission
 
     public float[] gears;
     public float reverseGear;
-    public bool engaged;
     public int currentGear;
     public float timeBetweenShifts;
     public Drive drive;
