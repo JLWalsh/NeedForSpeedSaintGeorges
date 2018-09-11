@@ -26,6 +26,16 @@ public class VehicleInput : MonoBehaviour {
         return Input.GetButton("Handbrake");
     }
 
+    public bool IsUpshifting()
+    {
+        return Input.GetButton("Upshift");
+    }
+
+    public bool IsDownshifting()
+    {
+        return Input.GetButton("Downshift");
+    }
+
     public float GetBraking()
     {
         if (!IsBraking())
