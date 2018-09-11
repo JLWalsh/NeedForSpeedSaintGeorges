@@ -25,7 +25,6 @@ public class CarController : MonoBehaviour {
 
         foreach (Wheel wheel in wheels)
         {
-
             if (wheel.steering)
             {
                 wheel.WheelCollider.steerAngle = steerAngle;

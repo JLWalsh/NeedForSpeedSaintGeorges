@@ -5,14 +5,22 @@ using UnityEngine;
 public class VehicleInput : MonoBehaviour {
 
     private Rigidbody carRigidbody;
+    private Transmission transmission;
 
     private void Awake()
     {
         carRigidbody = GetComponent<Rigidbody>();
+        transmission = GetComponent<Transmission>();
     }
 
     public float GetThrottle()
     {
+        if (transmission.GetDrive() == Transmission.Drive.FORWARD && IsReversing())
+            return 0f;
+
+        if (transmission.GetDrive() == Transmission.Drive.REVERSE && !IsReversing())
+            return 0f;
+
         return Mathf.Abs(GetAccelerationInput());
     }
 
@@ -46,23 +54,11 @@ public class VehicleInput : MonoBehaviour {
 
     private bool IsBraking()
     {
-        float forwardVelocity = Vector3.Dot(carRigidbody.velocity, transform.forward);
         float accelerationRequested = GetAccelerationInput();
+        Transmission.Drive drive = transmission.GetDrive();
 
-        bool isMovingForward = forwardVelocity > 0f;
-        bool isMovingBackwards = forwardVelocity < 0f;
-
-        if (isMovingForward && accelerationRequested < 0f)
-        {
-            return true;
-        }
-
-        if(isMovingBackwards && accelerationRequested > 0f)
-        {
-            return true;
-        }
-
-        return false;
+        return (drive == Transmission.Drive.FORWARD && accelerationRequested < 0f) || 
+               (drive == Transmission.Drive.REVERSE && accelerationRequested > 0f);
     }
 
     private float GetAccelerationInput()

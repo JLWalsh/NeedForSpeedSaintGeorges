@@ -19,7 +19,7 @@ public abstract class Engine : MonoBehaviour {
     {
         float torque = GetTorque() * vehicleInput.GetThrottle();
 
-        if(transmission.GetDrive() == Transmission.Drive.NEUTRAL)
+        if (transmission.GetDrive() == Transmission.Drive.NEUTRAL)
         {
             UpdateRpmWithoutTransmission();
         } else {
