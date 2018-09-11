@@ -97,6 +97,9 @@ public class AutomaticTransmission : Transmission
 
         if(throttle > 0f && !vehicleInput.IsReversing())
         {
+            if (drive != Drive.FORWARD)
+                currentGear = 0;
+
             drive = Drive.FORWARD;
         } else if(rpm <= MAX_DIFF_RPM_TO_CONSIDER_NOT_MOVING) {
             if(vehicleInput.IsReversing())

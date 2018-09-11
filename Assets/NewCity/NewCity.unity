@@ -1461,6 +1461,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4740146289566536, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
       propertyPath: m_LocalPosition.x
       value: 42.890827
@@ -1643,7 +1648,7 @@ Prefab:
     - target: {fileID: 146839257510221992, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
       propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 146532208140142866, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
@@ -1653,7 +1658,7 @@ Prefab:
     - target: {fileID: 146365028531796742, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
       propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 146337965540224072, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
@@ -1726,6 +1731,36 @@ Prefab:
         type: 2}
       propertyPath: handbrakeFrictionMultiplier
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[3]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[4]
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[5]
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[2]
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
