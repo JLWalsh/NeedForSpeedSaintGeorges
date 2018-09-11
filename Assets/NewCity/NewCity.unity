@@ -1643,7 +1643,7 @@ Prefab:
     - target: {fileID: 146839257510221992, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
       propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 146532208140142866, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
@@ -1653,7 +1653,7 @@ Prefab:
     - target: {fileID: 146365028531796742, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
       propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 146337965540224072, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
@@ -1716,6 +1716,16 @@ Prefab:
     - target: {fileID: 4195797179186152, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
       propertyPath: m_LocalPosition.z
       value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724098421232752, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: handbrakeFrictionMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114834588849153502, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: handbrakeFrictionMultiplier
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
