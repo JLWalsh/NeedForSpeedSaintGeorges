@@ -992,18 +992,6 @@ MonoBehaviour:
   timeBetweenShifts: 0.3
   drive: 2
   currentGear: 0
---- !u!114 &159134863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 159134860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9abc089fb644b74408743f1286621396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thingyModifier: 0.5
 --- !u!4 &159134871 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4740146289566536, guid: 76ea380230dd5c1488bf7030b084c250,
@@ -3735,6 +3723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482363436}
   - component: {fileID: 482363437}
+  - component: {fileID: 482363438}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Untagged
@@ -3850,6 +3839,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &482363438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 482363435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abc089fb644b74408743f1286621396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engineClip: {fileID: 8300000, guid: 379834045ceacb4499653546de951db4, type: 3}
+  grainSize: 45
 --- !u!4 &491520734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000014077919956, guid: a4389c4c20b90214785e45904ac565d5,

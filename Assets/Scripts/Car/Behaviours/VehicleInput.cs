@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class VehicleInput : MonoBehaviour {
 
-    private Rigidbody carRigidbody;
     private Transmission transmission;
 
     private void Awake()
     {
-        carRigidbody = GetComponent<Rigidbody>();
         transmission = GetComponent<Transmission>();
     }
 
