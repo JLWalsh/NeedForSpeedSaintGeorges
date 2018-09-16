@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.Utils.Audio;
 
 [RequireComponent(typeof (AudioSource))]
 public class CarAudioV2 : MonoBehaviour {
@@ -10,6 +11,8 @@ public class CarAudioV2 : MonoBehaviour {
 
     [Tooltip("Grain size in samples")]
     public int grainSize;
+
+    public int windowSize;
 
     public int scrollSpeed;
 
@@ -20,6 +23,7 @@ public class CarAudioV2 : MonoBehaviour {
     private int clipChannels;
 
     private int grainPosition = 10000;
+    private GrainWindowIterator grainWindowGenerator;
 
     private void Awake()
     {
@@ -30,19 +34,22 @@ public class CarAudioV2 : MonoBehaviour {
         engineClipSamples = new float[engineClip.samples * engineClip.channels];
 
         engineClip.GetData(engineClipSamples, 0);
+        grainWindowGenerator = new GrainWindowIterator(engineClipSamples, grainSize, windowSize);
     }
 
     private void OnAudioFilterRead(float[] data, int channels)
     {
-        int samplesPerChannel = data.Length / channels;
-        int grainsToFullyFit = samplesPerChannel / grainSize;
-        
-        for(int sample = 0; sample < data.Length; sample += channels)
+
+        int position = 0;
+
+        foreach(float[] grain in grainWindowGenerator.CreateIteratorForWindow(data.Length))
         {
-            for(int channel = 0; channel < channels; channel++)
+            Debug.Log(position + " " + grain.Length);
+            for(int sample = 0; sample < grain.Length; sample++)
             {
-                data[sample + channel] = engineClipSamples[25000 + sample + channel];
+                data[position + sample] = grain[sample];
             }
+            position += grain.Length;
         }
 
     }
