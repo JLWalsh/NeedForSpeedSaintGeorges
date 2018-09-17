@@ -25,6 +25,8 @@ public class SmoothFollowCamera : MonoBehaviour {
         Vector3 speedOffset = Vector3.Lerp(minOffset, maxOffset, speed / velocityAtMaxOffset);
         Vector3 offsetWithRotation = GetCameraRotation() * speedOffset;
 
+
+
         targetCamera.transform.position = transform.position + offsetWithRotation;
         targetCamera.transform.LookAt(transform, transform.up);
 	}
