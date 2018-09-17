@@ -984,10 +984,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gears:
-  - 1
-  - 2
   - 3
-  - 4
+  - 2
+  - 1.5
+  - 1
   reverseGear: 3
   timeBetweenShifts: 0.3
   drive: 2
@@ -3850,12 +3850,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3975148eca0c5a4c8a882ccfb7008a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  engineClip: {fileID: 8300000, guid: 379834045ceacb4499653546de951db4, type: 3}
+  engineClip: {fileID: 8300000, guid: 11dbbee9cc85b8b44ae39187751a0f0e, type: 3}
   grainSize: 100
   grainStep: 0
   playbackSpeed: 1
-  fromSample: 0
-  toSample: 600000
+  acceleration: 0
+  windowSize: 10
+  rpmDeltaForDeceleration: 100
 --- !u!4 &491520734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000014077919956, guid: a4389c4c20b90214785e45904ac565d5,

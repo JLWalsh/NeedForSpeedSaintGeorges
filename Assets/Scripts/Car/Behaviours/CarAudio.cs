@@ -12,28 +12,29 @@ public class CarAudio : MonoBehaviour {
     public int playbackSpeed;
     public int acceleration;
 
-    public int windowLength;
+    public int rpmWindowRepeatSize = 10;
 
     private float[] samples;
     private int position = 0;
     private int interval = 0;
     private int windowPosition = 0;
 
+    private float rpmRatio = 0;
+
+    public void PlayForRpmRatio(float rpmRatio)
+    {
+        this.rpmRatio = rpmRatio;
+    }
+
     private void Start()
     {
-        samples = new float[engineClip.samples * engineClip.channels];
+        samples = new float[engineClip.samples * engineClip.channels - 1];
         engineClip.GetData(samples, 0);
     }
 
     private void Update()
     {
-        windowPosition += acceleration * 10;
-
-        if (windowPosition < 0)
-            windowPosition = 0;
-
-        if (windowPosition >= engineClip.samples - windowLength)
-            windowPosition = engineClip.samples - windowLength;
+        windowPosition = Mathf.FloorToInt(rpmRatio * (engineClip.samples - rpmWindowRepeatSize - 1));
     }
 
     private void OnGUI()
@@ -41,11 +42,11 @@ public class CarAudio : MonoBehaviour {
         GUILayout.BeginArea(new Rect(16, 16, Screen.width - 32, Screen.height - 32));
         GUILayout.FlexibleSpace();
 
-        acceleration = Mathf.RoundToInt(GUILayout.HorizontalSlider(acceleration, 0, 1000));
-        windowLength = Mathf.RoundToInt(GUILayout.HorizontalSlider(windowLength, 0, engineClip.samples));
+        playbackSpeed = Mathf.RoundToInt(GUILayout.HorizontalSlider(playbackSpeed, -1, 1));
+        windowPosition = Mathf.RoundToInt(GUILayout.HorizontalSlider(windowPosition, 0, engineClip.samples - rpmWindowRepeatSize));
+        rpmWindowRepeatSize = Mathf.RoundToInt(GUILayout.HorizontalSlider(rpmWindowRepeatSize, 0, engineClip.samples));
 
         GUILayout.EndArea();
-
     }
 
     void OnAudioFilterRead(float[] data, int channels)
@@ -61,19 +62,17 @@ public class CarAudio : MonoBehaviour {
             {
                 interval = grainSize;
                 position += grainStep;
-            }
-            else
-            {
+            } else {
                 position += playbackSpeed;
             }
 
-            while (position >= (windowLength + windowPosition))
+            while (position >= (rpmWindowRepeatSize + windowPosition))
             {
-                position -= (windowLength + windowPosition);
+                position -= (rpmWindowRepeatSize + windowPosition);
             }
             while (position < windowPosition)
             {
-                position += windowLength;
+                position += rpmWindowRepeatSize;
             }
         }
     }
