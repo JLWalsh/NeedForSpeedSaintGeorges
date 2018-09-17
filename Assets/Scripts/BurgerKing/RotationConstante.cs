@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotationConstante : MonoBehaviour {
 
-    public float speed = 0.5f;
+    public float speed = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +13,6 @@ public class RotationConstante : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(Vector3.up, speed);
+        transform.Rotate(0, 0, speed);
 	}
 }
