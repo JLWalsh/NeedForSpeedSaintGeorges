@@ -14,9 +14,7 @@ public class AutomaticTransmission : Transmission
 
     public float shiftRpm;
     public float downshiftRpm;
-    public float maxThrottleForDownshift;
 
-    private VehicleInput vehicleInput;
     private Timer timer;
 
     private void Start()
@@ -37,7 +35,7 @@ public class AutomaticTransmission : Transmission
             TryUpshift();
         }
 
-        if (rpm <= downshiftRpm && vehicleInput.GetThrottle() < maxThrottleForDownshift && timer.CanBeTriggered())
+        if (rpm <= downshiftRpm && timer.CanBeTriggered())
         {
             timer.Reset();
             TryDownshift();
@@ -85,9 +83,10 @@ public class AutomaticTransmission : Transmission
     private float GetCurrentGearRatio()
     {
         if(drive == Drive.REVERSE)
-        {
             return -reverseGear;
-        }
+
+        if (drive == Drive.NEUTRAL)
+            return 0f;
 
         return gears[currentGear];
     }
@@ -98,6 +97,9 @@ public class AutomaticTransmission : Transmission
 
         if(throttle > 0f && !vehicleInput.IsReversing())
         {
+            if (drive != Drive.FORWARD)
+                currentGear = 0;
+
             drive = Drive.FORWARD;
         } else if(rpm <= MAX_DIFF_RPM_TO_CONSIDER_NOT_MOVING) {
             if(vehicleInput.IsReversing())

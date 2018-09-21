@@ -11,8 +11,6 @@ public class CombustionEngine : Engine {
     public float idleSpeed;
     public float rpmGainSpeed;
 
-    private float rpm = 0f;
-
     protected override float GetTorque()
     {
         if(IsRedlining())
@@ -25,12 +23,7 @@ public class CombustionEngine : Engine {
 
     protected override float GetRpm()
     {
-        if (transmission.GetDrive() == Transmission.Drive.NEUTRAL)
-        {
-            return rpm;
-        }
-
-        return Mathf.Max(idleSpeed, transmission.GetRpm());
+        return ApplyRpmLimits(transmission.GetRpm());
     }
 
     protected override void UpdateRpmWithoutTransmission()
