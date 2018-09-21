@@ -10,12 +10,21 @@ public class CarController : MonoBehaviour {
     public float brakeTorque;
     public float handbrakeTorque;
 
-    private Wheel[] wheels;
+    public float criticalSpeed;
+    public int stepsBelow;
+    public int stepsAbove;
 
+    private Wheel[] wheels;
     private VehicleInput vehicleInput;
 
-	void Start () {
+    void Start () {
         wheels = GetComponentsInChildren<Wheel>();
+
+        if(wheels.Length > 0)
+        {
+            wheels[0].WheelCollider.ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
+        }
+
         vehicleInput = GetComponent<VehicleInput>();
 	}
 	

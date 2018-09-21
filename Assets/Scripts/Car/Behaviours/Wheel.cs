@@ -14,6 +14,7 @@ public class Wheel : MonoBehaviour {
     public Transform mesh;
 
     private bool isSpinning;
+    private bool isLocked;
     private float colliderCircumference;
 
     private WheelCollider wheelCollider;
@@ -22,6 +23,7 @@ public class Wheel : MonoBehaviour {
 
     public WheelCollider WheelCollider { get { return wheelCollider; } }
     public bool IsSpinning { get { return isSpinning; } }
+    public bool IsLocked { get { return isLocked; } }
 
     public void EnableHandbrakeFriction()
     {
@@ -48,7 +50,7 @@ public class Wheel : MonoBehaviour {
     private void Update()
     {
         SyncMeshToCollider();
-        CheckIsSpinning();
+        UpdateMovementFlags();
     }
 
     private void SyncMeshToCollider()
@@ -62,7 +64,7 @@ public class Wheel : MonoBehaviour {
         mesh.rotation = rotation;
     }
 
-    private void CheckIsSpinning()
+    private void UpdateMovementFlags()
     {
         float speedUnitsPerMinute = attachedRigidbody.velocity.magnitude * 60f;
         float speedAtWheelRpm = wheelCollider.rpm * colliderCircumference;
@@ -70,5 +72,6 @@ public class Wheel : MonoBehaviour {
         float speedDifference = speedAtWheelRpm - speedUnitsPerMinute;
 
         isSpinning = speedDifference > 0.1f;
+        isLocked = speedAtWheelRpm == 0f && speedUnitsPerMinute > 0.1f;
     }
 }

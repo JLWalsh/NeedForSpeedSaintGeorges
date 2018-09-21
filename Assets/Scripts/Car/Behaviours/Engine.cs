@@ -16,7 +16,7 @@ public abstract class Engine : MonoBehaviour {
     {
         transmission = GetComponent<Transmission>();
         vehicleInput = GetComponent<VehicleInput>();
-        carAudio = GetComponentInChildren<CarAudio>();
+        carAudio = GetComponent<CarAudio>();
     }
 
     private void Update()
