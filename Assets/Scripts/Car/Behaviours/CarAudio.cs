@@ -2,79 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Derived from https://github.com/keijiro/unity-granular-synth/blob/master/Assets/GranularSynth.js
-
+[RequireComponent(typeof(AudioSource))]
 public class CarAudio : MonoBehaviour {
 
-    public AudioClip engineClip;
-    public int grainSize;
-    public int grainStep;
-    public int playbackSpeed;
-    public int acceleration;
+    public float maxVolume;
+    public float maxPitch;
 
-    public int rpmWindowRepeatSize = 10;
+    public AnimationCurve pitchForRpm;
+    public AnimationCurve volumeForThrottle;
 
-    private float[] samples;
-    private int position = 0;
-    private int interval = 0;
-    private int windowPosition = 0;
+    private float relativeRpm;
+    private float throttle;
 
-    private float rpmRatio = 0;
+    private VehicleInput vehicleInput;
+    private AudioSource audioSource;
 
-    public void PlayForRpmRatio(float rpmRatio)
+    public void PlayForRelativeRpm(float relativeRpm)
     {
-        this.rpmRatio = rpmRatio;
+        this.relativeRpm = relativeRpm;
     }
 
-    private void Start()
+    private void Awake()
     {
-        samples = new float[engineClip.samples * engineClip.channels - 1];
-        engineClip.GetData(samples, 0);
+        vehicleInput = GetComponentInParent<VehicleInput>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        windowPosition = Mathf.FloorToInt(rpmRatio * (engineClip.samples - rpmWindowRepeatSize - 1));
+        float pitch = pitchForRpm.Evaluate(relativeRpm);
+        float volume = volumeForThrottle.Evaluate(vehicleInput.GetThrottle());
+
+        audioSource.pitch = pitch * maxPitch;
+        audioSource.volume = volume * maxVolume;
     }
-
-    private void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(16, 16, Screen.width - 32, Screen.height - 32));
-        GUILayout.FlexibleSpace();
-
-        playbackSpeed = Mathf.RoundToInt(GUILayout.HorizontalSlider(playbackSpeed, -1, 1));
-        windowPosition = Mathf.RoundToInt(GUILayout.HorizontalSlider(windowPosition, 0, engineClip.samples - rpmWindowRepeatSize));
-        rpmWindowRepeatSize = Mathf.RoundToInt(GUILayout.HorizontalSlider(rpmWindowRepeatSize, 0, engineClip.samples));
-
-        GUILayout.EndArea();
-    }
-
-    void OnAudioFilterRead(float[] data, int channels)
-    {
-        for (var sample = 0; sample < data.Length; sample += channels)
-        {
-            for(int channel = 0; channel < channels; channel++)
-            {
-                data[sample + channel] = samples[position * channels + channel];
-            }
-
-            if (--interval <= 0)
-            {
-                interval = grainSize;
-                position += grainStep;
-            } else {
-                position += playbackSpeed;
-            }
-
-            while (position >= (rpmWindowRepeatSize + windowPosition))
-            {
-                position -= (rpmWindowRepeatSize + windowPosition);
-            }
-            while (position < windowPosition)
-            {
-                position += rpmWindowRepeatSize;
-            }
-        }
-    }
-
 }

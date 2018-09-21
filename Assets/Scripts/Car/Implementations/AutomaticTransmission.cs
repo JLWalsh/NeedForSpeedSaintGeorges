@@ -48,7 +48,7 @@ public class AutomaticTransmission : Transmission
     {
         float rpm = differential.GetRpm() * GetCurrentGearRatio();
       
-        return rpm;
+        return Mathf.Abs(rpm);
     }
 
     public override Drive GetDrive()

@@ -43,7 +43,8 @@ public class ManualTransmission : Transmission {
 
     public override float GetRpm()
     {
-        return differential.GetRpm() * GetCurrentGearRatio();
+        float rpm = differential.GetRpm() * GetCurrentGearRatio();
+        return Mathf.Abs(rpm);
     }
 
     protected override float GetOutputtedTorque(float inputTorque)

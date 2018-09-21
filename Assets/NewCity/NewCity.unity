@@ -985,10 +985,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gears:
   - 3
-  - 2
-  - 1.5
-  - 1
-  reverseGear: 3
+  - 1.37
+  - 1.19
+  - 0.9
+  reverseGear: 1.5
   timeBetweenShifts: 0.3
   drive: 2
   currentGear: 0
@@ -1663,7 +1663,7 @@ Prefab:
     - target: {fileID: 114510941697291372, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
       propertyPath: brakeTorque
-      value: 35000
+      value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: 114699689451447782, guid: 76ea380230dd5c1488bf7030b084c250,
         type: 2}
@@ -3753,7 +3753,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 379834045ceacb4499653546de951db4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fb9111a250ccfc742b6cdcfc783c8759, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.104
   m_Pitch: 1
@@ -3850,13 +3850,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3975148eca0c5a4c8a882ccfb7008a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  engineClip: {fileID: 8300000, guid: 11dbbee9cc85b8b44ae39187751a0f0e, type: 3}
-  grainSize: 100
-  grainStep: 0
-  playbackSpeed: 1
-  acceleration: 0
-  windowSize: 10
-  rpmDeltaForDeceleration: 100
+  maxVolume: 1.85
+  maxPitch: 1.9
+  pitchForRpm:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.012500763
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  volumeForThrottle:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.008332826
+      value: 0.6312439
+      inSlope: 1.2558441
+      outSlope: 1.2558441
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.17408948
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &491520734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000014077919956, guid: a4389c4c20b90214785e45904ac565d5,

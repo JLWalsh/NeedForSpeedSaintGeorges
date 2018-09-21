@@ -50,7 +50,7 @@ public class CombustionEngine : Engine {
         return rpm >= maxRpm;
     }
 
-    protected override float GetRpmRatio()
+    protected override float GetRelativeRpm()
     {
         return rpm / maxRpm;
     }

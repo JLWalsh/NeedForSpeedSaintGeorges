@@ -31,14 +31,14 @@ public abstract class Engine : MonoBehaviour {
         }
 
         transmission.ForwardTorque(torque);
-        carAudio.PlayForRpmRatio(GetRpmRatio());
+        carAudio.PlayForRelativeRpm(GetRelativeRpm());
     }
 
     protected abstract float GetTorque();
 
     protected abstract float GetRpm();
 
-    protected abstract float GetRpmRatio();
+    protected abstract float GetRelativeRpm();
 
     protected abstract void UpdateRpmWithoutTransmission();
 }
