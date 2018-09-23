@@ -599,7 +599,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1519523150202854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.990387, y: 1.58, z: -8.863988}
+  m_LocalPosition: {x: 43.913452, y: 1.21, z: -11.164497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4714001433001086}
@@ -708,8 +708,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 3c5863086be250549989a2524f683d79, type: 2}
-  - {fileID: 2100002, guid: 5ace929356cc47d41a706c8171efa97e, type: 3}
+  - {fileID: 2100000, guid: 79120a2f4c753d747851681cc4773bd8, type: 2}
+  - {fileID: 2100000, guid: 58fb10f80f4958248a16ec307e4b298c, type: 2}
   - {fileID: 2100004, guid: 5ace929356cc47d41a706c8171efa97e, type: 3}
   - {fileID: 2100006, guid: 5ace929356cc47d41a706c8171efa97e, type: 3}
   - {fileID: 2100008, guid: 5ace929356cc47d41a706c8171efa97e, type: 3}
@@ -718,11 +718,11 @@ MeshRenderer:
   - {fileID: 2100014, guid: 5ace929356cc47d41a706c8171efa97e, type: 3}
   - {fileID: 2100016, guid: 5ace929356cc47d41a706c8171efa97e, type: 3}
   - {fileID: 2100018, guid: 5ace929356cc47d41a706c8171efa97e, type: 3}
-  - {fileID: 2100000, guid: 3c5863086be250549989a2524f683d79, type: 2}
-  - {fileID: 2100000, guid: 3c5863086be250549989a2524f683d79, type: 2}
-  - {fileID: 2100000, guid: 3c5863086be250549989a2524f683d79, type: 2}
-  - {fileID: 2100026, guid: 5ace929356cc47d41a706c8171efa97e, type: 3}
-  - {fileID: 2100028, guid: 5ace929356cc47d41a706c8171efa97e, type: 3}
+  - {fileID: 2100000, guid: 79120a2f4c753d747851681cc4773bd8, type: 2}
+  - {fileID: 2100000, guid: 79120a2f4c753d747851681cc4773bd8, type: 2}
+  - {fileID: 2100000, guid: 79120a2f4c753d747851681cc4773bd8, type: 2}
+  - {fileID: 2100000, guid: 5b20b45efe40b0b4d8b09eec69e64e9d, type: 2}
+  - {fileID: 2100000, guid: 90099b25d6b45224f99a85d36604342b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1206,7 +1206,7 @@ MonoBehaviour:
   targetCamera: {fileID: 0}
   minOffset: {x: 0, y: 1.22, z: -4.98}
   maxOffset: {x: 0, y: 1.75, z: -6.5}
-  velocityAtMaxOffset: 10
+  velocityAtMaxOffset: 50
 --- !u!114 &114422926055182398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1363,8 +1363,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 28424.824
-    damper: 4547.972
+    spring: 28424.844
+    damper: 4547.9746
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0.6236615
@@ -1392,8 +1392,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 21572.084
-    damper: 3451.5337
+    spring: 21572.07
+    damper: 3451.5312
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0.6236615
@@ -1421,8 +1421,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 19187.02
-    damper: 3069.9233
+    spring: 19187.006
+    damper: 3069.921
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0.6236615
@@ -1450,8 +1450,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 30816.068
-    damper: 4930.571
+    spring: 30816.082
+    damper: 4930.5737
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0.6236615
