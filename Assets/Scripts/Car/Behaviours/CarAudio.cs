@@ -11,7 +11,6 @@ public class CarAudio : MonoBehaviour {
     public AnimationCurve pitchForRpm;
     public AnimationCurve volumeForThrottle;
 
-    public AudioClip tireScreeching;
     public float minimumScreechDuration;
 
     public AudioSource engineAudioSource;

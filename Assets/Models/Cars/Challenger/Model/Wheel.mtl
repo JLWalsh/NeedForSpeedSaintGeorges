@@ -1,0 +1,38 @@
+# Blender MTL File: 'None'
+# Material Count: 3
+
+newmtl Tex_0260_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0007\Tex_0260_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0007\\Tex_0260_0.dds
+
+newmtl Tex_0276_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0007\Tex_0276_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0007\\Tex_0276_0.dds
+
+newmtl Tex_0280_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0007\Tex_0280_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0007\\Tex_0280_0.dds

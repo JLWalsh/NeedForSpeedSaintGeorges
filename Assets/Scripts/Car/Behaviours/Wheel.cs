@@ -11,6 +11,8 @@ public class Wheel : MonoBehaviour {
 
     public float handbrakeFrictionMultiplier;
 
+    public float speedDeltaToleratedForFlags;
+
     public Transform mesh;
 
     private bool isSpinning;
@@ -71,7 +73,7 @@ public class Wheel : MonoBehaviour {
 
         float speedDifference = speedAtWheelRpm - speedUnitsPerMinute;
 
-        isSpinning = speedDifference > 0.1f;
-        isLocked = speedAtWheelRpm == 0f && speedUnitsPerMinute > 0.1f;
+        isSpinning = speedDifference > speedDeltaToleratedForFlags;
+        isLocked = speedAtWheelRpm == 0f && speedUnitsPerMinute > speedDeltaToleratedForFlags;
     }
 }
