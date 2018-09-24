@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 65079816951931072}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,7 +599,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1519523150202854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.913452, y: 1.21, z: -11.164497}
+  m_LocalPosition: {x: 33.478546, y: 0.853205, z: -4.814441}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4714001433001086}
@@ -994,7 +994,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3b42069adb707d34e872fe51044eac09, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.16
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3975148eca0c5a4c8a882ccfb7008a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolume: 1.6
+  maxVolume: 0.16
   maxPitch: 1.9
   pitchForRpm:
     serializedVersion: 2
@@ -1363,8 +1363,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 28424.844
-    damper: 4547.9746
+    spring: 28424.83
+    damper: 4547.973
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0.6236615
@@ -1392,8 +1392,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 21572.07
-    damper: 3451.5312
+    spring: 21572.074
+    damper: 3451.532
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0.6236615
@@ -1421,8 +1421,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 19187.006
-    damper: 3069.921
+    spring: 19187.014
+    damper: 3069.922
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0.6236615
@@ -1450,8 +1450,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 30816.082
-    damper: 4930.5737
+    spring: 30816.076
+    damper: 4930.5723
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0.6236615

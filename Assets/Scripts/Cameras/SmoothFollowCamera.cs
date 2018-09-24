@@ -7,15 +7,16 @@ public class SmoothFollowCamera : MonoBehaviour {
 
     private enum LookDirection { BEHIND, FORWARD, LEFT, RIGHT };
 
-    public Camera targetCamera;
     public Vector3 minOffset;
     public Vector3 maxOffset;
     public float velocityAtMaxOffset;
 
     private Rigidbody targetRigidbody;
+    private Camera targetCamera;
 
     private void Start()
     {
+        targetCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         targetRigidbody = GetComponent<Rigidbody>();
     }
 
@@ -24,6 +25,8 @@ public class SmoothFollowCamera : MonoBehaviour {
 
         Vector3 speedOffset = Vector3.Lerp(minOffset, maxOffset, speed / velocityAtMaxOffset);
         Vector3 offsetWithRotation = GetCameraRotation() * speedOffset;
+
+
 
         targetCamera.transform.position = transform.position + offsetWithRotation;
         targetCamera.transform.LookAt(transform, transform.up);

@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 65850573250603492}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -637,19 +637,19 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
-  - {fileID: 2100000, guid: ebb207721ad170a4e8b167532bb6cff0, type: 2}
+  - {fileID: 2100000, guid: bcaf96c623d1c3b4baba5f93ef78a584, type: 2}
   - {fileID: 2100000, guid: 7099441c4c37e4d4e90a2c942b644df3, type: 2}
   - {fileID: 2100000, guid: 84f02de55ae5a30469556f77cc6e9b0c, type: 2}
   - {fileID: 2100008, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
-  - {fileID: 2100000, guid: ebb207721ad170a4e8b167532bb6cff0, type: 2}
+  - {fileID: 2100000, guid: bcaf96c623d1c3b4baba5f93ef78a584, type: 2}
   - {fileID: 2100012, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
   - {fileID: 2100014, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
   - {fileID: 2100016, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
   - {fileID: 2100018, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
   - {fileID: 2100020, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
   - {fileID: 2100022, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
-  - {fileID: 2100000, guid: ebb207721ad170a4e8b167532bb6cff0, type: 2}
-  - {fileID: 2100000, guid: ebb207721ad170a4e8b167532bb6cff0, type: 2}
+  - {fileID: 2100000, guid: bcaf96c623d1c3b4baba5f93ef78a584, type: 2}
+  - {fileID: 2100000, guid: bcaf96c623d1c3b4baba5f93ef78a584, type: 2}
   - {fileID: 2100028, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
   - {fileID: 2100030, guid: f3ef3e6e7bf476349a0333e50e56ec6c, type: 3}
   m_StaticBatchInfo:
@@ -999,7 +999,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3b42069adb707d34e872fe51044eac09, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.16
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1187,7 +1187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f33599af6fbb24ebfe9b2f91268ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCamera: {fileID: 0}
   minOffset: {x: 0, y: 1.22, z: -4.98}
   maxOffset: {x: 0, y: 1.75, z: -6.5}
   velocityAtMaxOffset: 50
@@ -1297,7 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3975148eca0c5a4c8a882ccfb7008a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolume: 1.6
+  maxVolume: 0.16
   maxPitch: 1.9
   pitchForRpm:
     serializedVersion: 2
@@ -1377,8 +1376,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.68
   m_SuspensionSpring:
-    spring: 24520.615
-    damper: 3923.2986
+    spring: 24520.617
+    damper: 3923.2988
     targetPosition: 0.5
   m_SuspensionDistance: 0.1962
   m_ForceAppPointDistance: 1.2615625
@@ -1407,9 +1406,9 @@ WheelCollider:
   m_Radius: 0.68
   m_SuspensionSpring:
     spring: 24401.715
-    damper: 3904.2747
+    damper: 3904.2742
     targetPosition: 0.5
-  m_SuspensionDistance: 0.19620001
+  m_SuspensionDistance: 0.1962
   m_ForceAppPointDistance: 1.2605625
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1436,9 +1435,9 @@ WheelCollider:
   m_Radius: 0.68
   m_SuspensionSpring:
     spring: 20598.287
-    damper: 3295.7263
+    damper: 3295.7258
     targetPosition: 0.5
-  m_SuspensionDistance: 0.19620001
+  m_SuspensionDistance: 0.1962
   m_ForceAppPointDistance: 1.3075625
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1464,10 +1463,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.68
   m_SuspensionSpring:
-    spring: 20479.389
-    damper: 3276.702
+    spring: 20479.385
+    damper: 3276.7017
     targetPosition: 0.5
-  m_SuspensionDistance: 0.1962
+  m_SuspensionDistance: 0.19620001
   m_ForceAppPointDistance: 1.306563
   m_Mass: 20
   m_WheelDampingRate: 0.25

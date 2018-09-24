@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4402585021068400}
   m_Layer: 0
-  m_Name: Challenger_ScaledCentered
+  m_Name: Challenger_NoWheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
