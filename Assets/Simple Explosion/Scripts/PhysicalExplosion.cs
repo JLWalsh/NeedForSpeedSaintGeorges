@@ -10,7 +10,7 @@ public class PhysicalExplosion : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, Radius);// create explosion
         for(int i=0; i<hitColliders.Length; i++)
         {              
-            if(hitColliders[i].CompareTag("CanDestroy"))// if tag CanBeRigidbody
+            if(hitColliders[i].CompareTag("Player"))// if tag CanBeRigidbody
             {
                 if(!hitColliders[i].GetComponent<Rigidbody>())
                 {

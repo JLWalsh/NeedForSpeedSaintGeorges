@@ -1309,6 +1309,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000013781576632, guid: 498c88dda9a182b4b8027d8c8c03ad31,
     type: 2}
   m_PrefabInternal: {fileID: 209537997}
+--- !u!1 &210735003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 210735004}
+  - component: {fileID: 210735005}
+  m_Layer: 0
+  m_Name: Race
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &210735004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 210735003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 589407600}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &210735005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 210735003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28ccb1371d435a4a991070957b72033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCheckpoint: {fileID: 960735588}
 --- !u!1001 &214208733
 Prefab:
   m_ObjectHideFlags: 0
@@ -1482,7 +1523,11 @@ Prefab:
       objectReference: {fileID: 1036445716}
     - target: {fileID: 1134178571262068, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
       propertyPath: m_TagString
-      value: CanDestroy
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699945406428298, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
@@ -2532,6 +2577,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0697ef7940f3aac4c8174ce4303c378a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextCheckpoint: {fileID: 0}
+  previousCheckpoint: {fileID: 0}
+  arrow: {fileID: 0}
+  checkedFlag: {fileID: 0}
 --- !u!1001 &383762358
 Prefab:
   m_ObjectHideFlags: 0
@@ -3648,27 +3697,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114948876435902882, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
+        type: 2}
+      propertyPath: previousCheckpoint
+      value: 
+      objectReference: {fileID: 1577926269}
     - target: {fileID: 1658192838756554, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2, type: 2}
       propertyPath: m_Name
       value: Checkpoint3
       objectReference: {fileID: 0}
-    - target: {fileID: 1658192838756554, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2, type: 2}
-      propertyPath: m_TagString
-      value: Checkpoint3
-      objectReference: {fileID: 0}
-    - target: {fileID: 65232144869747526, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65232144869747526, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
+    - target: {fileID: 4400750295617476, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.015
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &524007747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114948876435902882, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 524007746}
+  m_Script: {fileID: 11500000, guid: 0697ef7940f3aac4c8174ce4303c378a, type: 3}
 --- !u!1001 &550954123
 Prefab:
   m_ObjectHideFlags: 0
@@ -4042,6 +4092,7 @@ Transform:
   - {fileID: 373027132}
   - {fileID: 223329147}
   - {fileID: 1300381550}
+  - {fileID: 210735004}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6334,6 +6385,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000014046560536, guid: 7ff501a0847fafe41a4cff014b7b6f1c,
     type: 2}
   m_PrefabInternal: {fileID: 958886394}
+--- !u!114 &960735588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114948876435902882, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 970996287}
+  m_Script: {fileID: 11500000, guid: 0697ef7940f3aac4c8174ce4303c378a, type: 3}
 --- !u!1001 &963834508
 Prefab:
   m_ObjectHideFlags: 0
@@ -6510,20 +6567,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1658192838756554, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2, type: 2}
-      propertyPath: m_TagString
-      value: Checkpoint1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65232144869747526, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
+    - target: {fileID: 114948876435902882, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65232144869747526, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: nextCheckpoint
+      value: 
+      objectReference: {fileID: 1577926269}
     - target: {fileID: 1658192838756554, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2, type: 2}
       propertyPath: m_Name
       value: Checkpoint1
@@ -10249,6 +10297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0697ef7940f3aac4c8174ce4303c378a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextCheckpoint: {fileID: 0}
+  previousCheckpoint: {fileID: 0}
+  arrow: {fileID: 0}
+  checkedFlag: {fileID: 0}
 --- !u!4 &1421599359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013424413536, guid: 020af8999b21626469d9de02eb18a77a,
@@ -11622,27 +11674,29 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114948876435902882, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
+        type: 2}
+      propertyPath: nextCheckpoint
+      value: 
+      objectReference: {fileID: 524007747}
+    - target: {fileID: 114948876435902882, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
+        type: 2}
+      propertyPath: previousCheckpoint
+      value: 
+      objectReference: {fileID: 960735588}
     - target: {fileID: 1658192838756554, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2, type: 2}
       propertyPath: m_Name
       value: Checkpoint2
       objectReference: {fileID: 0}
-    - target: {fileID: 1658192838756554, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2, type: 2}
-      propertyPath: m_TagString
-      value: Checkpoint2
-      objectReference: {fileID: 0}
-    - target: {fileID: 65232144869747526, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65232144869747526, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1577926269 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114948876435902882, guid: 7fb5a02fe118d2f4a9cc67d0282db7e2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1577926268}
+  m_Script: {fileID: 11500000, guid: 0697ef7940f3aac4c8174ce4303c378a, type: 3}
 --- !u!1001 &1585885863
 Prefab:
   m_ObjectHideFlags: 0

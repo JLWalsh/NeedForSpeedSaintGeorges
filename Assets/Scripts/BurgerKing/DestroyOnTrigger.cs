@@ -11,7 +11,7 @@ public class DestroyOnTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "CanDestroy" && detruit == false)
+        if (other.gameObject.tag == "Player" && detruit == false)
         {
             print(other.gameObject.tag);
             Instantiate(explosion, explosion.transform.position, explosion.transform.rotation);

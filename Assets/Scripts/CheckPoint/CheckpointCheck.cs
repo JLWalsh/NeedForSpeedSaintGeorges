@@ -4,45 +4,62 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CheckpointCheck : MonoBehaviour {
-    public static bool checkpointbool1 = false;
-    public static bool checkpointbool2 = false;
-    public static bool checkpointbool3 = false;
-	
-	void Update () {
-        if (checkpointbool3 == true)
+
+    public CheckpointCheck nextCheckpoint;
+    public CheckpointCheck previousCheckpoint;
+
+    public Transform arrow;
+    public Transform checkedFlag;
+
+    private bool isChecked = false;
+
+    public bool IsChecked { get { return isChecked; } }
+
+    private void Start()
+    {
+        if(nextCheckpoint != null)
         {
-            print("checkpoint 3 !");
+            arrow.LookAt(nextCheckpoint.transform.position);
+            Destroy(checkedFlag.gameObject);
+        } else if(previousCheckpoint != null) {
+            checkedFlag.LookAt(previousCheckpoint.transform.position);
+            Destroy(arrow.gameObject);
         }
-        else if (checkpointbool2 == true)
-        {
-            print("check point 2 !");
-        }
-        else if (checkpointbool1 == true)
-        {
-            print("check point 1 :)");
-            
-        }
-	}
+    }
 
     void OnTriggerEnter(Collider other)
     {
-        switch (other.gameObject.tag)
+        if(other.gameObject.tag == "Player" && CanBeChecked())
         {
-            case "Checkpoint1":
-                checkpointbool1 = true;
-                break;
-            case "Checkpoint2":
-                if (checkpointbool1 == true)
-                {
-                    checkpointbool2 = true;
-                }
-                break;
-            case "Checkpoint3":
-                if (checkpointbool2 == true)
-                {
-                    checkpointbool3 = true;
-                }
-                break;
+            isChecked = true;
+
+            HideAllChildren();
         }
+    }
+
+    public bool IsRaceCompleted()
+    {
+        if (!isChecked)
+            return false;
+
+        if (nextCheckpoint != null)
+            return nextCheckpoint.IsRaceCompleted();
+
+        return true;
+    }
+
+    private bool CanBeChecked()
+    {
+        if (previousCheckpoint == null)
+            return true;
+
+        return previousCheckpoint.IsChecked;
+    }
+
+    private void HideAllChildren()
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        foreach (var r in renderers)
+            r.enabled = false; 
     }
 }
