@@ -1,0 +1,38 @@
+# Blender MTL File: 'None'
+# Material Count: 3
+
+newmtl Tex_0225_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd World\_Ripper\19.09.2013_20.18.49\Frames\Frame0019\Tex_0225_0.dds
+map_Ka World\\_Ripper\\19.09.2013_20.18.49\\Frames\\Frame0019\\Tex_0225_0.dds
+
+newmtl Tex_0245_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd World\_Ripper\19.09.2013_20.18.49\Frames\Frame0019\Tex_0245_0.dds
+map_Ka World\\_Ripper\\19.09.2013_20.18.49\\Frames\\Frame0019\\Tex_0245_0.dds
+
+newmtl Tex_0269_0_dds.001
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd World\_Ripper\19.09.2013_20.18.49\Frames\Frame0019\Tex_0269_0.dds
+map_Ka World\\_Ripper\\19.09.2013_20.18.49\\Frames\\Frame0019\\Tex_0269_0.dds

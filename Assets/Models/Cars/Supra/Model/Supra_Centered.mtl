@@ -1,0 +1,182 @@
+# Blender MTL File: 'None'
+# Material Count: 15
+
+newmtl Tex_0208_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0208_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0208_0.dds
+
+newmtl Tex_0209_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0209_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0209_0.dds
+
+newmtl Tex_0224_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0224_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0224_0.dds
+
+newmtl Tex_0231_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0231_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0231_0.dds
+
+newmtl Tex_0237_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0237_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0237_0.dds
+
+newmtl Tex_0238_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0238_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0238_0.dds
+
+newmtl Tex_0253_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0253_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0253_0.dds
+
+newmtl Tex_0254_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0254_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0254_0.dds
+
+newmtl Tex_0270_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0270_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0270_0.dds
+
+newmtl Tex_0272_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0272_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0272_0.dds
+
+newmtl Tex_0273_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0273_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0273_0.dds
+
+newmtl Tex_0276_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0276_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0276_0.dds
+
+newmtl Tex_0279_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0279_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0279_0.dds
+
+newmtl Tex_0280_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0280_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0280_0.dds
+
+newmtl Tex_0281_0_dds
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd D:\Games\NFS\Data\_Ripper\28.07.2013_22.03.35\Frames\Frame0023\Tex_0281_0.dds
+map_Ka D:\\Games\\NFS\\Data\\_Ripper\\28.07.2013_22.03.35\\Frames\\Frame0023\\Tex_0281_0.dds
