@@ -9,21 +9,38 @@ public class Wheel : MonoBehaviour {
     public bool braking;
     public bool handbraking;
 
+    public float handbrakeFrictionMultiplier;
+
     public Transform mesh;
 
     private bool isSpinning;
     private float colliderCircumference;
 
     private WheelCollider wheelCollider;
+    private WheelFrictionCurve originalFrictionCurve;
     private Rigidbody attachedRigidbody;
 
     public WheelCollider WheelCollider { get { return wheelCollider; } }
     public bool IsSpinning { get { return isSpinning; } }
 
+    public void EnableHandbrakeFriction()
+    {
+        WheelFrictionCurve newCurve = wheelCollider.sidewaysFriction;
+        newCurve.stiffness = originalFrictionCurve.stiffness * handbrakeFrictionMultiplier;
+
+        wheelCollider.sidewaysFriction = newCurve;
+    }
+
+    public void DisableHandbrakeFriction()
+    {
+        wheelCollider.sidewaysFriction = originalFrictionCurve;
+    }
+
     private void Awake()
     {
         attachedRigidbody = GetComponentInParent<Rigidbody>();
         wheelCollider = GetComponentInChildren<WheelCollider>();
+        originalFrictionCurve = wheelCollider.sidewaysFriction;
 
         colliderCircumference = Mathf.Pow(wheelCollider.radius, 2) * Mathf.PI;  
     }

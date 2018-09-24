@@ -25,7 +25,6 @@ public class CarController : MonoBehaviour {
 
         foreach (Wheel wheel in wheels)
         {
-
             if (wheel.steering)
             {
                 wheel.WheelCollider.steerAngle = steerAngle;
@@ -36,13 +35,19 @@ public class CarController : MonoBehaviour {
                 wheel.WheelCollider.brakeTorque = brakeTorqueToApply;
             }
 
-            if(wheel.handbraking && vehicleInput.IsHandbraking())
+            if(wheel.handbraking)
             {
-                wheel.WheelCollider.brakeTorque = handbrakeTorque;
-
-                if(wheel.braking)
+                if(vehicleInput.IsHandbraking())
                 {
-                    wheel.WheelCollider.brakeTorque += brakeTorqueToApply;
+                    wheel.WheelCollider.brakeTorque = handbrakeTorque;
+                    wheel.EnableHandbrakeFriction();
+
+                    if (wheel.braking)
+                    {
+                        wheel.WheelCollider.brakeTorque += brakeTorqueToApply;
+                    }
+                } else {
+                    wheel.DisableHandbrakeFriction();
                 }
             }
         }

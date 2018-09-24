@@ -949,6 +949,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011390663880, guid: ef160ea432de1e8478029944626df829,
     type: 2}
   m_PrefabInternal: {fileID: 351478636}
+
+--- !u!1 &159134860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1699945406428298, guid: 76ea380230dd5c1488bf7030b084c250,
+    type: 2}
+  m_PrefabInternal: {fileID: 235466390}
+--- !u!114 &159134861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159134860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b85a31e81fdfa48a5d5644c4f5ac70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axles:
+  - leftWheel: {fileID: 1662286746}
+    rightWheel: {fileID: 1534990062}
+    antiRoll: 5000
+  - leftWheel: {fileID: 1927915035}
+    rightWheel: {fileID: 566038131}
+    antiRoll: 5000
+--- !u!114 &159134862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159134860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1704aa3c8e5be2147bb3fab4d91fe1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gears:
+  - 3
+  - 2
+  - 1.5
+  - 1
+  reverseGear: 3
+  timeBetweenShifts: 0.2
+  drive: 2
+  currentGear: 0
 --- !u!4 &161073052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012408206314, guid: da3a5ae9b7bc8694c8acfbaeae73f1ea,
@@ -1438,6 +1482,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4740146289566536, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
       propertyPath: m_LocalPosition.x
       value: 42.890827
@@ -1479,7 +1528,53 @@ Prefab:
       propertyPath: m_TagString
       value: CanDestroy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114724098421232752, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: handbrakeFrictionMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114834588849153502, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: handbrakeFrictionMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[3]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[4]
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[5]
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: gears.Array.data[2]
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114699689451447782, guid: 76ea380230dd5c1488bf7030b084c250,
+        type: 2}
+      propertyPath: stepsBelow
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114083653005433020, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 76ea380230dd5c1488bf7030b084c250, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &237429457 stripped
