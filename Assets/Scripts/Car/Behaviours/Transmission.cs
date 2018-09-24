@@ -7,10 +7,12 @@ public abstract class Transmission : MonoBehaviour {
     public enum Drive { FORWARD, REVERSE, NEUTRAL };
 
     protected Differential differential;
+    protected VehicleInput vehicleInput;
 
     private void Awake()
     {
         differential = GetComponent<Differential>();
+        vehicleInput = GetComponent<VehicleInput>();
     }
 
     public abstract Drive GetDrive();
@@ -19,12 +21,9 @@ public abstract class Transmission : MonoBehaviour {
 
     public void ForwardTorque(float torqueToForward)
     {
-        if(GetDrive() != Drive.NEUTRAL)
-        {
-            differential.ForwardTorque(GetOutputtedTorque(torqueToForward));
-        } else {
-            differential.ForwardTorque(0f);
-        }
+        float torque = GetOutputtedTorque(torqueToForward);
+
+        differential.ForwardTorque(torque);
     }
 
     protected abstract float GetOutputtedTorque(float inputTorque);
