@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CarAudio))]
 public abstract class Engine : MonoBehaviour {
+
+    public float rpm;
 
     protected Transmission transmission;
     protected VehicleInput vehicleInput;
 
-    public float rpm;
+    private CarAudio carAudio;
 
     private void Awake()
     {
         transmission = GetComponent<Transmission>();
         vehicleInput = GetComponent<VehicleInput>();
+        carAudio = GetComponent<CarAudio>();
     }
 
     private void Update()
@@ -27,11 +31,14 @@ public abstract class Engine : MonoBehaviour {
         }
 
         transmission.ForwardTorque(torque);
+        carAudio.PlayForRelativeRpm(GetRelativeRpm());
     }
 
     protected abstract float GetTorque();
 
     protected abstract float GetRpm();
+
+    protected abstract float GetRelativeRpm();
 
     protected abstract void UpdateRpmWithoutTransmission();
 }
