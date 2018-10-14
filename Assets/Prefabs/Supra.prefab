@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 114922635259133918}
   m_Layer: 0
   m_Name: Supra
-  m_TagString: Player
+  m_TagString: MainPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,7 +599,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1519523150202854}
   m_LocalRotation: {x: -0.0046774, y: -0.9949748, z: 0.082654126, w: -0.056316882}
-  m_LocalPosition: {x: 146.8999, y: 25.721985, z: 67.72629}
+  m_LocalPosition: {x: 389.52228, y: 23.703007, z: 408.6696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4714001433001086}
@@ -1136,9 +1136,7 @@ MonoBehaviour:
   - 1.3
   - 0.8
   reverseGear: 3
-  currentGear: 0
   timeBetweenShifts: 0.5
-  drive: 0
   shiftRpm: 6500
   downshiftRpm: 3500
 --- !u!114 &114217342275337764
@@ -1362,11 +1360,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 29056.33
-    damper: 4649.013
+    spring: 29056.61
+    damper: 4649.058
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0.5825608
+  m_ForceAppPointDistance: 0.5825634
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1391,11 +1389,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 20940.834
-    damper: 3350.5337
+    spring: 20940.572
+    damper: 3350.4915
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0.582561
+  m_ForceAppPointDistance: 0.58256394
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1420,11 +1418,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 20609.248
-    damper: 3297.4797
+    spring: 20609.646
+    damper: 3297.5435
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0.5825616
+  m_ForceAppPointDistance: 0.58256423
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1449,11 +1447,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.4
   m_SuspensionSpring:
-    spring: 29393.574
-    damper: 4702.972
+    spring: 29393.168
+    damper: 4702.907
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0.5825623
+  m_ForceAppPointDistance: 0.5825637
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:

@@ -8,14 +8,14 @@ public class AutomaticTransmission : Transmission
 
     public float[] gears;
     public float reverseGear;
-    public int currentGear;
     public float timeBetweenShifts;
-    public Drive drive;
 
     public float shiftRpm;
     public float downshiftRpm;
 
     private Timer timer;
+    private Drive drive;
+    private int currentGear;
 
     private void Start()
     {
@@ -54,6 +54,10 @@ public class AutomaticTransmission : Transmission
     public override Drive GetDrive()
     {
         return drive;
+    }
+
+    public override int GetCurrentGear() {
+        return currentGear;
     }
 
     protected override float GetOutputtedTorque(float torqueToForward)

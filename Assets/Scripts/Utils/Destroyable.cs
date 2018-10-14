@@ -23,7 +23,7 @@ public class Destroyable : MonoBehaviour {
         if (collision.rigidbody == null)
             return;
 
-        if (collision.rigidbody.tag == DESTROY_FOR_TAG) {
+        if (collision.collider.tag == DESTROY_FOR_TAG) {
             Rigidbody rigidbody = GetComponent<Rigidbody>();
 
             if(rigidbody == null) {
