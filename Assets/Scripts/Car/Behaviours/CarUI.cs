@@ -12,6 +12,7 @@ public class CarUI : MonoBehaviour {
     public TextMeshProUGUI speedText;
     public TextMeshProUGUI rpmText;
     public TextMeshProUGUI gearText;
+    public TextMeshProUGUI nitroRemainingText;
 
     private Engine engine;
     private Transmission transmission;
@@ -35,6 +36,7 @@ public class CarUI : MonoBehaviour {
         speedText.text = RenderFloat(targetRigidbody.velocity.magnitude * 3.6f);
         rpmText.text = RenderFloat(engine.rpm);
         gearText.text = GetTransmissionText();
+        nitroRemainingText.text = "0";
     }
 
     private string RenderFloat(float value) {
