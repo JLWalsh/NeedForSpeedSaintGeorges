@@ -29,12 +29,6 @@ public class CarSelector : MonoBehaviour {
     }
 
     void Update () {
-        if (Input.GetButton("Horizontal"))
-            ViewNextCar();
-
-        if (Input.GetButtonUp("Vertical"))
-            SelectCar();
-            
         displayedCar.transform.Rotate(Vector3.up * turnSpeed);
 	}
 
@@ -61,12 +55,7 @@ public class CarSelector : MonoBehaviour {
     }
 
     public void SelectCar() {
-        SceneManager.LoadScene(drivingSceneName, LoadSceneMode.Additive);
-
-        Scene drivingScene = SceneManager.GetSceneByName(drivingSceneName);
-        SceneManager.SetActiveScene(drivingScene);
-
-        carSpawner.Spawn(GetCurrentCar().driveablePrefab);
+        carSpawner.DriveWithCar(drivingSceneName, GetCurrentCar().driveablePrefab);
     }
 
     private void InstantiateCurrentCar() {
