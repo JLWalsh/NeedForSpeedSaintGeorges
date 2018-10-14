@@ -1091,8 +1091,8 @@ MonoBehaviour:
     displayPrefab: {fileID: 1158518505314026, guid: db85c6900cf64404883c32a2e3e807b2,
       type: 2}
     handling: 0
-    topSpeed: 1
-    acceleration: 2
+    topSpeed: 2
+    acceleration: 1
   - displayName: EVO
     driveablePrefab: {fileID: 1172484502772268, guid: f343a1e6c96011a449d17cc864e3e4f6,
       type: 2}
@@ -1655,7 +1655,7 @@ Prefab:
     - target: {fileID: 224680763032670990, guid: afba9023c333b1a4d9b48e3d3436bda8,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 224680763032670990, guid: afba9023c333b1a4d9b48e3d3436bda8,
         type: 2}
@@ -1685,12 +1685,12 @@ Prefab:
     - target: {fileID: 224680763032670990, guid: afba9023c333b1a4d9b48e3d3436bda8,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 224680763032670990, guid: afba9023c333b1a4d9b48e3d3436bda8,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 224680763032670990, guid: afba9023c333b1a4d9b48e3d3436bda8,
         type: 2}

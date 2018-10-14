@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 114125841121848156}
   m_Layer: 0
   m_Name: Challenger
-  m_TagString: Player
+  m_TagString: MainPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -571,7 +571,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1811124453386686}
   m_LocalRotation: {x: -0, y: 0.99899554, z: -0, w: -0.04481134}
-  m_LocalPosition: {x: 146.86917, y: 24.768, z: 93.1907}
+  m_LocalPosition: {x: 398.56293, y: 23.710001, z: 413.59308}
   m_LocalScale: {x: 0.54828, y: 0.54828, z: 0.54828}
   m_Children:
   - {fileID: 4263454596079790}
@@ -1237,9 +1237,7 @@ MonoBehaviour:
   - 2
   - 1
   reverseGear: 3
-  currentGear: 0
   timeBetweenShifts: 0.7
-  drive: 0
   shiftRpm: 5500
   downshiftRpm: 3000
 --- !u!114 &114468275781786628
@@ -1370,8 +1368,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.72
   m_SuspensionSpring:
-    spring: 43076.24
-    damper: 6892.1978
+    spring: 43076.66
+    damper: 6892.2656
     targetPosition: 0.5
   m_SuspensionDistance: 0.1962
   m_ForceAppPointDistance: 1.4130776
@@ -1399,10 +1397,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.72
   m_SuspensionSpring:
-    spring: 38437.465
-    damper: 6149.994
+    spring: 38437.73
+    damper: 6150.037
     targetPosition: 0.5
-  m_SuspensionDistance: 0.19619998
+  m_SuspensionDistance: 0.19620001
   m_ForceAppPointDistance: 1.4130776
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1428,10 +1426,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.72
   m_SuspensionSpring:
-    spring: 31787.564
-    damper: 5086.0107
+    spring: 31787.156
+    damper: 5085.945
     targetPosition: 0.5
-  m_SuspensionDistance: 0.19620003
+  m_SuspensionDistance: 0.1962
   m_ForceAppPointDistance: 1.491079
   m_Mass: 20
   m_WheelDampingRate: 0.25
@@ -1457,10 +1455,10 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.72
   m_SuspensionSpring:
-    spring: 36698.742
-    damper: 5871.799
+    spring: 36698.45
+    damper: 5871.752
     targetPosition: 0.5
-  m_SuspensionDistance: 0.19620001
+  m_SuspensionDistance: 0.19620003
   m_ForceAppPointDistance: 1.491079
   m_Mass: 20
   m_WheelDampingRate: 0.25

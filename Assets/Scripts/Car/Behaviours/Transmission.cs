@@ -19,6 +19,8 @@ public abstract class Transmission : MonoBehaviour {
 
     public abstract float GetRpm();
 
+    public abstract int GetCurrentGear();
+
     public void ForwardTorque(float torqueToForward)
     {
         float torque = GetOutputtedTorque(torqueToForward);
