@@ -1915,40 +1915,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 19978354, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
-      propertyPath: m_SortingFudge
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19978354, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 496466, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.45256707
-      objectReference: {fileID: 0}
-    - target: {fileID: 496466, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.45256725
-      objectReference: {fileID: 0}
-    - target: {fileID: 496466, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.45256725
-      objectReference: {fileID: 0}
+    - target: {fileID: 114230428391023466, guid: e81c54ccdf67af64cae7a53181a76489,
+        type: 2}
+      propertyPath: sun
+      value: 
+      objectReference: {fileID: 1186100352}
     - target: {fileID: 19869660, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 1
+      propertyPath: InitialModule.maxNumParticles
+      value: 1500
       objectReference: {fileID: 0}
-    - target: {fileID: 19869660, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
-      propertyPath: InitialModule.startSize.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 19869660, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
-      propertyPath: moveWithTransform
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114745883086850034, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e81c54ccdf67af64cae7a53181a76489, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &325216702 stripped
@@ -6213,29 +6189,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011330173334, guid: 512ec97ca5c465e4f94ef0d9929e595c,
     type: 2}
   m_PrefabInternal: {fileID: 702366661}
---- !u!1 &922201601 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 181504, guid: e81c54ccdf67af64cae7a53181a76489,
-    type: 2}
-  m_PrefabInternal: {fileID: 309513761}
---- !u!114 &922201602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 922201601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad3964cb5d6d54e45b4afd0a60bb0fde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  etoiles: {fileID: 922201604}
-  sun: {fileID: 1186100352}
---- !u!198 &922201604 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19869660, guid: e81c54ccdf67af64cae7a53181a76489,
-    type: 2}
-  m_PrefabInternal: {fileID: 309513761}
 --- !u!4 &928511645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011390663880, guid: ef160ea432de1e8478029944626df829,
@@ -12085,12 +12038,12 @@ Prefab:
     - target: {fileID: 146913629530211948, guid: f343a1e6c96011a449d17cc864e3e4f6,
         type: 2}
       propertyPath: m_SuspensionSpring.spring
-      value: 20479.385
+      value: 20479.383
       objectReference: {fileID: 0}
     - target: {fileID: 146913629530211948, guid: f343a1e6c96011a449d17cc864e3e4f6,
         type: 2}
       propertyPath: m_SuspensionSpring.damper
-      value: 3276.7017
+      value: 3276.7014
       objectReference: {fileID: 0}
     - target: {fileID: 146913629530211948, guid: f343a1e6c96011a449d17cc864e3e4f6,
         type: 2}
@@ -12100,22 +12053,27 @@ Prefab:
     - target: {fileID: 146002311158476848, guid: f343a1e6c96011a449d17cc864e3e4f6,
         type: 2}
       propertyPath: m_SuspensionSpring.spring
-      value: 24520.617
+      value: 24520.615
       objectReference: {fileID: 0}
     - target: {fileID: 146002311158476848, guid: f343a1e6c96011a449d17cc864e3e4f6,
         type: 2}
       propertyPath: m_SuspensionSpring.damper
-      value: 3923.2988
+      value: 3923.298
       objectReference: {fileID: 0}
     - target: {fileID: 146084796766415236, guid: f343a1e6c96011a449d17cc864e3e4f6,
         type: 2}
       propertyPath: m_SuspensionSpring.damper
-      value: 3904.2742
+      value: 3904.274
       objectReference: {fileID: 0}
     - target: {fileID: 146084796766415236, guid: f343a1e6c96011a449d17cc864e3e4f6,
         type: 2}
       propertyPath: m_SuspensionDistance
-      value: 0.1962
+      value: 0.19620001
+      objectReference: {fileID: 0}
+    - target: {fileID: 146084796766415236, guid: f343a1e6c96011a449d17cc864e3e4f6,
+        type: 2}
+      propertyPath: m_SuspensionSpring.spring
+      value: 24401.71
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f343a1e6c96011a449d17cc864e3e4f6, type: 2}

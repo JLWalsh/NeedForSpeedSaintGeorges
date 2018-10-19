@@ -8,31 +8,26 @@ public class Stars : MonoBehaviour {
     public Light sun;
 
 	// Use this for initialization
-	void Start () {
-        etoiles.Play();
+	void Start ()
+    {
+        etoiles.Stop();
+        etoiles.Clear();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         transform.RotateAround(Vector3.zero, Vector3.right, 5f * Time.deltaTime);
         transform.LookAt(Vector3.zero);
-        if (sun.transform.eulerAngles.x <= 91)
+        print(sun.transform.eulerAngles.x);
+        if(sun.transform.eulerAngles.x >= 348 && sun.transform.eulerAngles.x <= 350)
         {
-            etoiles.Stop());
+            etoiles.Play();                 
         }
-        else if (sun.transform.eulerAngles.x > 91)
+        else if (sun.transform.eulerAngles.x >= 0 && sun.transform.eulerAngles.x <= 2)
         {
-            etoiles.Play();
+            etoiles.Stop();
+            etoiles.Clear();
         }
-    }
-
-    void AfficherEtoiles()
-    {
-
-    }
-
-    void EffacerEtoiles()
-    {
-
     }
 }
