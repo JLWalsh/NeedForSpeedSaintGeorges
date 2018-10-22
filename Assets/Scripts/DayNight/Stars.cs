@@ -19,7 +19,6 @@ public class Stars : MonoBehaviour {
     {
         transform.RotateAround(Vector3.zero, Vector3.right, 5f * Time.deltaTime);
         transform.LookAt(Vector3.zero);
-        print(sun.transform.eulerAngles.x);
         if(sun.transform.eulerAngles.x >= 348 && sun.transform.eulerAngles.x <= 350)
         {
             etoiles.Play();                 

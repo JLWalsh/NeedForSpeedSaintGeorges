@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class carLights : MonoBehaviour {
 
-    public Renderer brakeLights;
+    public Renderer LeftBrakeLights;
+    public Renderer RightBrakeLight;
     public Material brakeLightOn;
     public Material brakeLightOff;
 
@@ -19,11 +20,13 @@ public class carLights : MonoBehaviour {
     {
 		if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Space))
         {
-            brakeLights.material = brakeLightOn;
+            LeftBrakeLights.material = brakeLightOn;
+            RightBrakeLight.material = brakeLightOn;
         }
         else
         {
-            brakeLights.material = brakeLightOff;
+            LeftBrakeLights.material = brakeLightOff;
+            RightBrakeLight.material = brakeLightOff;
         }
 	}
 }
