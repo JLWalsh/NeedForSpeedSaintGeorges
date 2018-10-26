@@ -500,7 +500,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929222597009644}
   m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
-  m_LocalPosition: {x: -1.15, y: 0.09, z: -2.24}
+  m_LocalPosition: {x: -1.15, y: -0.24, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4379140744147228}
@@ -768,7 +768,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1293423746942772}
   m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
-  m_LocalPosition: {x: 0.88, y: 0.09, z: -2.19}
+  m_LocalPosition: {x: 0.88, y: -0.21, z: 1.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4379140744147228}
@@ -1540,7 +1540,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2.5
   m_Range: 60
-  m_SpotAngle: 15
+  m_SpotAngle: 25
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -1577,7 +1577,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2.5
   m_Range: 60
-  m_SpotAngle: 15
+  m_SpotAngle: 25
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -1778,7 +1778,6 @@ MonoBehaviour:
   rightHeadLight: {fileID: 23110889763570198}
   leftSpotLight: {fileID: 108415247193909934}
   rightSpotLight: {fileID: 108404263496332230}
-  sun: {fileID: 0}
   headLightOff: {fileID: 2100000, guid: 7cfe503509cf7254f9e8d92d202f884c, type: 2}
   headLightOn: {fileID: 2100000, guid: e0955b8484b6ffd40817dca1a9a7da1c, type: 2}
 --- !u!114 &114625013584376282
@@ -1908,6 +1907,7 @@ MonoBehaviour:
   RightBrakeLight: {fileID: 23236450244166644}
   brakeLightOn: {fileID: 2100000, guid: c3af33e819e1c584d922e09239a62580, type: 2}
   brakeLightOff: {fileID: 2100000, guid: 5fc3f2381d30f3d458dfc99b5411125f, type: 2}
+  input: {fileID: 114927324558331814}
 --- !u!114 &114927324558331814
 MonoBehaviour:
   m_ObjectHideFlags: 1

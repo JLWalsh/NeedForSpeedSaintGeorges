@@ -1394,6 +1394,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1755282372335532, guid: bef1dec0200f9a24eb0f6993048e9b58, type: 2}
+      propertyPath: m_TagString
+      value: Sun
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bef1dec0200f9a24eb0f6993048e9b58, type: 2}
   m_IsPrefabAsset: 0
@@ -11953,25 +11957,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114603121552937906, guid: f343a1e6c96011a449d17cc864e3e4f6,
+    - target: {fileID: 108404263496332230, guid: f343a1e6c96011a449d17cc864e3e4f6,
         type: 2}
-      propertyPath: sun
-      value: 
-      objectReference: {fileID: 70032866}
-    - target: {fileID: 146580051639539654, guid: f343a1e6c96011a449d17cc864e3e4f6,
-        type: 2}
-      propertyPath: m_SuspensionSpring.spring
-      value: 19994.422
+      propertyPath: m_SpotAngle
+      value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 146580051639539654, guid: f343a1e6c96011a449d17cc864e3e4f6,
+    - target: {fileID: 108415247193909934, guid: f343a1e6c96011a449d17cc864e3e4f6,
         type: 2}
-      propertyPath: m_SuspensionSpring.damper
-      value: 3199.1074
+      propertyPath: m_SpotAngle
+      value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 146580051639539654, guid: f343a1e6c96011a449d17cc864e3e4f6,
-        type: 2}
-      propertyPath: m_SuspensionDistance
-      value: 0.1962
+    - target: {fileID: 4589809566206466, guid: f343a1e6c96011a449d17cc864e3e4f6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4589809566206466, guid: f343a1e6c96011a449d17cc864e3e4f6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024066053487288, guid: f343a1e6c96011a449d17cc864e3e4f6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024066053487288, guid: f343a1e6c96011a449d17cc864e3e4f6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f343a1e6c96011a449d17cc864e3e4f6, type: 2}

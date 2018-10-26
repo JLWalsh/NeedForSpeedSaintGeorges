@@ -9,6 +9,8 @@ public class carLights : MonoBehaviour {
     public Material brakeLightOn;
     public Material brakeLightOff;
 
+    public VehicleInput input;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -18,7 +20,7 @@ public class carLights : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Space))
+		if(input.IsBraking() || input.IsHandbraking())
         {
             LeftBrakeLights.material = brakeLightOn;
             RightBrakeLight.material = brakeLightOn;
