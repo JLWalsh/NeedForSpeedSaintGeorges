@@ -11,6 +11,10 @@ public class CombustionEngine : Engine {
     public float idleSpeed;
     public float rpmGainSpeed;
 
+    public override float GetRelativeRpm() {
+        return rpm / maxRpm;
+    }
+
     protected override float GetTorque()
     {
         if(IsRedlining())
@@ -48,10 +52,5 @@ public class CombustionEngine : Engine {
     private bool IsRedlining()
     {
         return rpm >= maxRpm;
-    }
-
-    protected override float GetRelativeRpm()
-    {
-        return rpm / maxRpm;
     }
 }

@@ -34,11 +34,11 @@ public abstract class Engine : MonoBehaviour {
         carAudio.PlayForRelativeRpm(GetRelativeRpm());
     }
 
+    public abstract float GetRelativeRpm();
+
     protected abstract float GetTorque();
 
     protected abstract float GetRpm();
-
-    protected abstract float GetRelativeRpm();
 
     protected abstract void UpdateRpmWithoutTransmission();
 }
