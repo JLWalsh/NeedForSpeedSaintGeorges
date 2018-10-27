@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class carLights : MonoBehaviour
+public class carLights2 : MonoBehaviour
 {
 
-    public Renderer LeftBrakeLight;
-    public Renderer RightBrakeLight;
+    public Renderer LeftBrakeLight1;
+    public Renderer LeftBrakeLight2;
+    public Renderer RightBrakeLight1;
+    public Renderer RightBrakeLight2;
 
     public Material brakeLightOn;
     public Material brakeLightOff;
@@ -34,13 +36,17 @@ public class carLights : MonoBehaviour
 
     void IntensifierLuminosite()
     {
-        LeftBrakeLight.material = brakeLightOn;
-        RightBrakeLight.material = brakeLightOn;
+        LeftBrakeLight1.material = brakeLightOn;
+        RightBrakeLight1.material = brakeLightOn;
+        LeftBrakeLight2.material = brakeLightOn;
+        RightBrakeLight2.material = brakeLightOn;
     }
 
     void AllumerNormalementLumieres()
     {
-        LeftBrakeLight.material = brakeLightOff;
-        RightBrakeLight.material = brakeLightOff;
+        LeftBrakeLight1.material = brakeLightOff;
+        RightBrakeLight1.material = brakeLightOff;
+        LeftBrakeLight2.material = brakeLightOff;
+        RightBrakeLight2.material = brakeLightOff;
     }
 }
