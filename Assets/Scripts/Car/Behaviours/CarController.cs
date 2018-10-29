@@ -26,6 +26,7 @@ public class CarController : MonoBehaviour {
         }
 
         vehicleInput = GetComponent<VehicleInput>();
+        FindObjectOfType<CarUI>().RenderFor(gameObject);
 	}
 	
 	void Update () {
