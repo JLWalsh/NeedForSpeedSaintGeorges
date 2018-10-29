@@ -5,46 +5,62 @@ using UnityEngine;
 public class Vitesse : MonoBehaviour {
 
     public float vitesseNitro;
-    public float tempsRecharge;
-    public float tempsRestant;
-    public bool nitroEnable;
-    public Rigidbody voiture;
-	// Use this for initialization
+    public float durationNitro;
+    public float durationRecharge;
+    public float nombreUtilisationsMax;
+
+    public int NitroUtilisees { get { return nitroUtilisees; } }
+    public float ProgressionRechargeNitro { get { return 1f - (tempsRecharge / durationRecharge); } }
+
+    private float tempsRestant;
+    private float tempsRecharge;
+    
+    private int nitroUtilisees;
+    private bool nitroEnable;
+    private Rigidbody voiture;
+
 	void Start () {
-        vitesseNitro = 20000;
-        tempsRecharge = 100;
-        tempsRestant = 1000;
         nitroEnable = true;
-        voiture.GetComponent<Rigidbody>();
+        voiture = GetComponent<Rigidbody>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetButton("Nitro") && PeutActiverNitro())
         {
-            if (nitroEnable == true)
-            {
-                UtiliserNitro();
-            }
+            ActiverNitro();
         }
-        if (tempsRecharge == 0)
+
+        if(tempsRestant > 0)
         {
-            nitroEnable = false;
-            tempsRestant--;
-            print(tempsRestant);
-            if (tempsRestant == 0)
-            {
-                nitroEnable = true;
-                tempsRecharge = 100;
-                tempsRestant = 1000;
-            }
+            AppliquerNitro();
         }
+
+        tempsRecharge--;
+        tempsRecharge = Mathf.Max(tempsRecharge, 0);
 	}
 
-    void UtiliserNitro()
+    bool PeutActiverNitro()
     {
-       tempsRecharge--;
-       print(tempsRecharge);
-       voiture.AddForce(transform.forward * vitesseNitro);
+        return tempsRecharge == 0 && tempsRestant == 0 && nitroUtilisees < nombreUtilisationsMax;
+    }
+
+    void Recharger()
+    {
+        tempsRecharge = 0;
+    }
+
+    void ActiverNitro()
+    {
+        tempsRestant = durationNitro;
+        tempsRecharge = durationRecharge;
+        nitroUtilisees++;
+    }
+
+    void AppliquerNitro()
+    {
+        voiture.AddForce(transform.forward * vitesseNitro);
+        tempsRestant--;
+
+        tempsRestant = Mathf.Max(tempsRestant, 0);
     }
 }

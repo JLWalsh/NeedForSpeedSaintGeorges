@@ -1338,6 +1338,21 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -54.599003
       objectReference: {fileID: 0}
+    - target: {fileID: 146580051639539654, guid: f343a1e6c96011a449d17cc864e3e4f6,
+        type: 2}
+      propertyPath: m_SuspensionSpring.spring
+      value: 19994.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 146580051639539654, guid: f343a1e6c96011a449d17cc864e3e4f6,
+        type: 2}
+      propertyPath: m_SuspensionSpring.damper
+      value: 3199.1072
+      objectReference: {fileID: 0}
+    - target: {fileID: 146580051639539654, guid: f343a1e6c96011a449d17cc864e3e4f6,
+        type: 2}
+      propertyPath: m_SuspensionDistance
+      value: 0.19620001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f343a1e6c96011a449d17cc864e3e4f6, type: 2}
   m_IsPrefabAsset: 0
@@ -14242,6 +14257,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011822814064, guid: be03c0b34bdd1e94ab367bce631a40ec,
     type: 2}
   m_PrefabInternal: {fileID: 881233104}
+--- !u!1 &1860587031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1155276237069242, guid: f343a1e6c96011a449d17cc864e3e4f6,
+    type: 2}
+  m_PrefabInternal: {fileID: 189252646}
+--- !u!114 &1860587046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1860587031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fd45153b8abef46a80b09e9ce35081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitesseNitro: 20000
+  durationNitro: 100
+  durationRecharge: 1000
+  nombreUtilisationsMax: 1
 --- !u!4 &1864716860 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000014046560536, guid: 7ff501a0847fafe41a4cff014b7b6f1c,
