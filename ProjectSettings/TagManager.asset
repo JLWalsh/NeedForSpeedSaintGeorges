@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CanDestroy
   - Sun
+  - MainPlayer
+  - centre
   layers:
   - Default
   - TransparentFX
