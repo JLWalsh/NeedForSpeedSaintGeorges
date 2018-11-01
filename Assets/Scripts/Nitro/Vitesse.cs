@@ -17,24 +17,32 @@ public class Vitesse : MonoBehaviour {
     
     private int nitroUtilisees;
     private bool nitroEnable;
+
+    public Renderer flamme1;
+    public Renderer flamme2;
     private Rigidbody voiture;
+    public AudioSource sonNitro;
 
 	void Start () {
         nitroEnable = true;
+        flamme1.enabled = false;
+        flamme2.enabled = false;
         voiture = GetComponent<Rigidbody>();
-	}
+    }
 	
 	void Update () {
 		if (Input.GetButton("Nitro") && PeutActiverNitro())
         {
             ActiverNitro();
         }
-
         if(tempsRestant > 0)
         {
             AppliquerNitro();
         }
-
+        if (tempsRestant == 0)
+        {
+            ArreterFlammes();
+        }
         tempsRecharge--;
         tempsRecharge = Mathf.Max(tempsRecharge, 0);
 	}
@@ -53,6 +61,7 @@ public class Vitesse : MonoBehaviour {
     {
         tempsRestant = durationNitro;
         tempsRecharge = durationRecharge;
+        AfficherFlammes();
         nitroUtilisees++;
     }
 
@@ -62,5 +71,18 @@ public class Vitesse : MonoBehaviour {
         tempsRestant--;
 
         tempsRestant = Mathf.Max(tempsRestant, 0);
+    }
+
+    void AfficherFlammes()
+    {
+        flamme1.enabled = true;
+        flamme2.enabled = true;
+        sonNitro.Play();
+    }
+
+    void ArreterFlammes()
+    {
+            flamme1.enabled = false;
+            flamme2.enabled = false;
     }
 }
