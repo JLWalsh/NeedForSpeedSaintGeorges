@@ -7,9 +7,9 @@ public class Vitesse : MonoBehaviour {
     public float vitesseNitro;
     public float durationNitro;
     public float durationRecharge;
-    public float nombreUtilisationsMax;
+    public int nombreUtilisationsMax;
 
-    public int NitroUtilisees { get { return nitroUtilisees; } }
+    public int NitroRestantes { get { return nombreUtilisationsMax - nitroUtilisees; } }
     public float ProgressionRechargeNitro { get { return 1f - (tempsRecharge / durationRecharge); } }
 
     private float tempsRestant;

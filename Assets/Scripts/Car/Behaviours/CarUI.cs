@@ -12,7 +12,10 @@ public class CarUI : MonoBehaviour {
     public TextMeshProUGUI speedText;
     public TextMeshProUGUI rpmText;
     public TextMeshProUGUI gearText;
+    public TextMeshProUGUI nitroRemainingText;
+    public TextMeshProUGUI nitroReloadText;
 
+    private Vitesse vitesse;
     private Engine engine;
     private Transmission transmission;
     private Rigidbody targetRigidbody;
@@ -29,12 +32,15 @@ public class CarUI : MonoBehaviour {
         engine = target.GetComponent<CombustionEngine>();
         transmission = target.GetComponent<Transmission>();
         targetRigidbody = target.GetComponent<Rigidbody>();
+        vitesse = target.GetComponent<Vitesse>();
     }
 
     private void UpdateText() {
         speedText.text = RenderFloat(targetRigidbody.velocity.magnitude * 3.6f);
         rpmText.text = RenderFloat(engine.rpm);
         gearText.text = GetTransmissionText();
+        nitroRemainingText.text = vitesse.NitroRestantes.ToString();
+        nitroReloadText.text = "||||||||||||||||".Substring(0, Mathf.FloorToInt(vitesse.ProgressionRechargeNitro * 16));
     }
 
     private string RenderFloat(float value) {
