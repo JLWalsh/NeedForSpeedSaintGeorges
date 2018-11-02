@@ -12,14 +12,13 @@ public class Stars : MonoBehaviour {
     {
         etoiles.Stop();
         etoiles.Clear();
-	}
+        sun = GameObject.FindGameObjectWithTag("Sun").GetComponent<Light>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        transform.RotateAround(Vector3.zero, Vector3.right, 5f * Time.deltaTime);
-        transform.LookAt(Vector3.zero);
-        print(sun.transform.eulerAngles.x);
+        transform.Rotate(new Vector3(Time.deltaTime * 2, 0, 0));
         if(sun.transform.eulerAngles.x >= 348 && sun.transform.eulerAngles.x <= 350)
         {
             etoiles.Play();                 
