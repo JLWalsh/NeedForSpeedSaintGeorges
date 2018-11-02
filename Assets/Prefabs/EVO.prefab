@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 114110171989817102}
   m_Layer: 0
   m_Name: EVO
-  m_TagString: Untagged
+  m_TagString: MainPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,7 +581,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929222597009644}
   m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
-  m_LocalPosition: {x: -1.15, y: 0.09, z: -2.24}
+  m_LocalPosition: {x: -1.29, y: -0.24, z: 1.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4379140744147228}
@@ -722,13 +722,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1030014445879262}
-  m_LocalRotation: {x: -0.68449056, y: 0.024581876, z: 0.080903135, w: 0.7241016}
-  m_LocalPosition: {x: -1.0790023, y: 0.7280001, z: -4.104998}
-  m_LocalScale: {x: 1.1619265, y: -0.008938271, z: 0.61735845}
+  m_LocalRotation: {x: -0.69107485, y: 0.12418546, z: 0.03467062, w: 0.7111902}
+  m_LocalPosition: {x: -1.091, y: 0.73, z: -4.158}
+  m_LocalScale: {x: 0.977645, y: -0.008938271, z: 0.36843547}
   m_Children: []
   m_Father: {fileID: 4795612752297834}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -95.58099, y: 129.402, z: -120.836}
+  m_LocalEulerAnglesHint: {x: -97.438995, y: 263.798, z: -250.87201}
 --- !u!4 &4251884254052940
 Transform:
   m_ObjectHideFlags: 1
@@ -808,8 +808,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1155276237069242}
-  m_LocalRotation: {x: -0, y: -0.45864362, z: -0, w: 0.8886204}
-  m_LocalPosition: {x: 35.55429, y: 0.832, z: -7.327511}
+  m_LocalRotation: {x: -0, y: 0.38571998, z: -0, w: 0.9226159}
+  m_LocalPosition: {x: 391.829, y: 25.28, z: 406.948}
   m_LocalScale: {x: 0.54828, y: 0.54828, z: 0.54828}
   m_Children:
   - {fileID: 4359308175026962}
@@ -818,7 +818,7 @@ Transform:
   - {fileID: 4267776749883238}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -54.599003, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45.377003, z: 0}
 --- !u!4 &4393552224793614
 Transform:
   m_ObjectHideFlags: 1
@@ -892,7 +892,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1293423746942772}
   m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
-  m_LocalPosition: {x: 0.88, y: 0.09, z: -2.19}
+  m_LocalPosition: {x: 1.32, y: -0.23, z: 1.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4379140744147228}
@@ -918,8 +918,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1379673044414134}
   m_LocalRotation: {x: -0.67259085, y: -0.12943365, z: -0.0834213, w: 0.72381586}
-  m_LocalPosition: {x: 1.1210004, y: 0.758, z: -4.099001}
-  m_LocalScale: {x: 1.1619256, y: -0.0089370515, z: 0.6173678}
+  m_LocalPosition: {x: 1.187, y: 0.765, z: -4.149}
+  m_LocalScale: {x: 0.90052295, y: -0.0089370515, z: 0.35550132}
   m_Children: []
   m_Father: {fileID: 4795612752297834}
   m_RootOrder: 1
@@ -1686,7 +1686,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 9.878895
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1876,7 +1876,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10.474621
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1963,7 +1963,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2.5
   m_Range: 60
-  m_SpotAngle: 15
+  m_SpotAngle: 25
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -2000,7 +2000,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2.5
   m_Range: 60
-  m_SpotAngle: 15
+  m_SpotAngle: 25
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -2219,7 +2219,6 @@ MonoBehaviour:
   rightHeadLight: {fileID: 23110889763570198}
   leftSpotLight: {fileID: 108415247193909934}
   rightSpotLight: {fileID: 108404263496332230}
-  sun: {fileID: 0}
   headLightOff: {fileID: 2100000, guid: 7cfe503509cf7254f9e8d92d202f884c, type: 2}
   headLightOn: {fileID: 2100000, guid: e0955b8484b6ffd40817dca1a9a7da1c, type: 2}
 --- !u!114 &114625013584376282
@@ -2279,9 +2278,7 @@ MonoBehaviour:
   - 1.5
   - 1
   reverseGear: 5
-  currentGear: 0
   timeBetweenShifts: 0.3
-  drive: 2
   shiftRpm: 7000
   downshiftRpm: 3000
 --- !u!114 &114677803420381928
@@ -2345,10 +2342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654293f5a98276a4591ab58e54847adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftBrakeLights: {fileID: 23523776166074440}
+  LeftBrakeLight: {fileID: 23523776166074440}
   RightBrakeLight: {fileID: 23236450244166644}
   brakeLightOn: {fileID: 2100000, guid: c3af33e819e1c584d922e09239a62580, type: 2}
   brakeLightOff: {fileID: 2100000, guid: 5fc3f2381d30f3d458dfc99b5411125f, type: 2}
+  input: {fileID: 114927324558331814}
 --- !u!114 &114927324558331814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2419,11 +2417,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.68
   m_SuspensionSpring:
-    spring: 19881.752
-    damper: 3181.08
+    spring: 20175.525
+    damper: 3228.084
     targetPosition: 0.5
   m_SuspensionDistance: 0.1962
-  m_ForceAppPointDistance: 1.3111297
+  m_ForceAppPointDistance: 1.3090074
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -2448,11 +2446,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.68
   m_SuspensionSpring:
-    spring: 25005.582
-    damper: 4000.893
+    spring: 24733.404
+    damper: 3957.3445
     targetPosition: 0.5
   m_SuspensionDistance: 0.1962
-  m_ForceAppPointDistance: 1.2651292
+  m_ForceAppPointDistance: 1.2630074
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -2477,11 +2475,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.68
   m_SuspensionSpring:
-    spring: 19994.422
-    damper: 3199.1074
+    spring: 20266.598
+    damper: 3242.6558
     targetPosition: 0.5
   m_SuspensionDistance: 0.1962
-  m_ForceAppPointDistance: 1.3121291
+  m_ForceAppPointDistance: 1.3100092
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -2506,11 +2504,11 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.68
   m_SuspensionSpring:
-    spring: 25118.248
-    damper: 4018.92
+    spring: 24824.477
+    damper: 3971.916
     targetPosition: 0.5
-  m_SuspensionDistance: 0.19620001
-  m_ForceAppPointDistance: 1.2661291
+  m_SuspensionDistance: 0.1962
+  m_ForceAppPointDistance: 1.2640058
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:

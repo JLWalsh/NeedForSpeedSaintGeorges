@@ -8,13 +8,16 @@ public class HeadLights : MonoBehaviour {
     public Renderer rightHeadLight;
     public Light leftSpotLight;
     public Light rightSpotLight;
-    public Light sun;
     public Material headLightOff;
     public Material headLightOn;
-	// Use this for initialization
-	void Start ()
+
+    private Light sun;
+
+    void Start ()
     {
         Eteindre();
+
+        sun = GameObject.FindGameObjectWithTag("Sun").GetComponent<Light>();
 	}
 	
 	// Update is called once per frame

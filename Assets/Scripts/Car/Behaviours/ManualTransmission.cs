@@ -8,9 +8,8 @@ public class ManualTransmission : Transmission {
     public float reverseGear;
     public float timeBetweenShifts;
 
-    public Drive drive = Drive.NEUTRAL;
-    public int currentGear = 0;
-
+    private Drive drive = Drive.NEUTRAL;
+    private int currentGear = 0;
     private Timer timer;
 
     private void Start()
@@ -45,6 +44,10 @@ public class ManualTransmission : Transmission {
     {
         float rpm = differential.GetRpm() * GetCurrentGearRatio();
         return Mathf.Abs(rpm);
+    }
+
+    public override int GetCurrentGear() {
+        return currentGear;
     }
 
     protected override float GetOutputtedTorque(float inputTorque)
@@ -129,4 +132,5 @@ public class ManualTransmission : Transmission {
 
         return Drive.REVERSE;
     }
+
 }

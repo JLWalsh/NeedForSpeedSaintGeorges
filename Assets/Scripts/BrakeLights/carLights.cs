@@ -2,31 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class carLights : MonoBehaviour {
+public class carLights : MonoBehaviour
+{
 
-    public Renderer LeftBrakeLights;
+    public Renderer LeftBrakeLight;
     public Renderer RightBrakeLight;
+
     public Material brakeLightOn;
     public Material brakeLightOff;
 
-	// Use this for initialization
-	void Start ()
+    public VehicleInput input;
+
+    // Use this for initialization
+    void Start()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-		if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Space))
+        if (input.IsBraking() || input.IsHandbraking())
         {
-            LeftBrakeLights.material = brakeLightOn;
-            RightBrakeLight.material = brakeLightOn;
+            IntensifierLuminosite();
         }
         else
         {
-            LeftBrakeLights.material = brakeLightOff;
-            RightBrakeLight.material = brakeLightOff;
+            AllumerNormalementLumieres();
         }
-	}
+    }
+
+    void IntensifierLuminosite()
+    {
+        LeftBrakeLight.material = brakeLightOn;
+        RightBrakeLight.material = brakeLightOn;
+    }
+
+    void AllumerNormalementLumieres()
+    {
+        LeftBrakeLight.material = brakeLightOff;
+        RightBrakeLight.material = brakeLightOff;
+    }
 }
