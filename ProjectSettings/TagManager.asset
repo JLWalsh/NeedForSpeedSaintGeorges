@@ -5,10 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - CanDestroy
-  - Checkpoint1
-  - Checkpoint2
-  - Checkpoint3
+  - Sun
   - MainPlayer
+  - centre
   layers:
   - Default
   - TransparentFX

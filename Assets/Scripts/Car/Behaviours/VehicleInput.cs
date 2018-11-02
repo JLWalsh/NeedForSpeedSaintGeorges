@@ -50,7 +50,7 @@ public class VehicleInput : MonoBehaviour {
         return Mathf.Abs(GetAccelerationInput());
     }
 
-    private bool IsBraking()
+    public bool IsBraking()
     {
         float accelerationRequested = GetAccelerationInput();
         Transmission.Drive drive = transmission.GetDrive();
