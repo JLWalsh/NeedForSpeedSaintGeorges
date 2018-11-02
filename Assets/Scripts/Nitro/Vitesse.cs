@@ -16,7 +16,6 @@ public class Vitesse : MonoBehaviour {
     private float tempsRecharge;
     
     private int nitroUtilisees;
-    private bool nitroEnable;
 
     public Renderer flamme1;
     public Renderer flamme2;
@@ -24,7 +23,6 @@ public class Vitesse : MonoBehaviour {
     public AudioSource sonNitro;
 
 	void Start () {
-        nitroEnable = true;
         flamme1.enabled = false;
         flamme2.enabled = false;
         voiture = GetComponent<Rigidbody>();
