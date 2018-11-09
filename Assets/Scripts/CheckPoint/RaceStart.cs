@@ -31,7 +31,7 @@ public class RaceStart : MonoBehaviour {
     private bool CanStartRace()
     {
         if (!previousRace)
-            return true;
+            return race.State != Race.RaceState.WON;
 
         return previousRace.State == Race.RaceState.WON && race.State != Race.RaceState.WON;
     }
