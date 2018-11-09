@@ -4,9 +4,57 @@ using UnityEngine;
 
 public class Race : MonoBehaviour {
 
-    public CheckpointCheck startCheckpoint;
-	
-	void Update () {
+    public enum RaceState
+    {
+        NOT_STARTED,
+        STARTED,
+        LOST,
+        WON,
+    }
 
+    public CheckpointCheck startCheckpoint;
+    public float maxWinTime;
+    public string raceName;
+
+    public RaceState State { get { return state; } }
+    public float CurrentTime { get { return currentTime; } }
+
+    private RaceState state = RaceState.NOT_STARTED;
+    private float currentTime;
+
+    private void Start()
+    {
+        startCheckpoint.gameObject.SetActive(false);
+    }
+
+    public void Begin()
+    {
+        startCheckpoint.gameObject.SetActive(true);
+
+        state = RaceState.STARTED;
+    }
+
+    public void Reset()
+    {
+        currentTime = 0;
+        state = RaceState.NOT_STARTED;
+        startCheckpoint.gameObject.SetActive(false);
+    }
+
+    void Update () {
+        if (state != RaceState.STARTED)
+            return;
+
+        currentTime += Time.deltaTime;
+
+        if (!startCheckpoint.IsCourseCompleted())
+            return;
+
+        if(currentTime <= maxWinTime)
+        {
+            state = RaceState.WON;
+        } else {
+            state = RaceState.LOST;
+        }
 	}
 }
