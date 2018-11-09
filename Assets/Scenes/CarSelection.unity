@@ -1094,7 +1094,7 @@ MonoBehaviour:
     topSpeed: 2
     acceleration: 1
   - displayName: EVO
-    driveablePrefab: {fileID: 1172484502772268, guid: f343a1e6c96011a449d17cc864e3e4f6,
+    driveablePrefab: {fileID: 1155276237069242, guid: f343a1e6c96011a449d17cc864e3e4f6,
       type: 2}
     displayPrefab: {fileID: 1527361881202872, guid: 5cbb0cfb8466a91449baf00511cdd275,
       type: 2}
