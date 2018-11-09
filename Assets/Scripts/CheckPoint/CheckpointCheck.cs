@@ -12,12 +12,15 @@ public class CheckpointCheck : MonoBehaviour {
     public Transform checkedFlag;
 
     private bool isChecked = false;
+    private bool visible = true;
 
     public bool IsChecked { get { return isChecked; } }
 
     private void Start()
     {
-        if(nextCheckpoint != null)
+        UpdateVisibility();
+
+        if (nextCheckpoint != null)
         {
             arrow.LookAt(nextCheckpoint.transform.position);
             Destroy(checkedFlag.gameObject);
@@ -27,23 +30,39 @@ public class CheckpointCheck : MonoBehaviour {
         }
     }
 
+    private void Update()
+    {
+        UpdateVisibility();
+    }
+
+    private void UpdateVisibility()
+    {
+        bool newVisibility = CanRender();
+
+        if (newVisibility != visible && !isChecked)
+        {
+            SetVisibility(newVisibility);
+            visible = newVisibility;
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player" && CanBeChecked())
         {
             isChecked = true;
 
-            HideAllChildren();
+            SetVisibility(false);
         }
     }
 
-    public bool IsRaceCompleted()
+    public bool IsCourseCompleted()
     {
         if (!isChecked)
             return false;
 
         if (nextCheckpoint != null)
-            return nextCheckpoint.IsRaceCompleted();
+            return nextCheckpoint.IsCourseCompleted();
 
         return true;
     }
@@ -56,10 +75,22 @@ public class CheckpointCheck : MonoBehaviour {
         return previousCheckpoint.IsChecked;
     }
 
-    private void HideAllChildren()
+    private bool CanRender()
+    {
+        if(previousCheckpoint != null)
+        {
+            return previousCheckpoint.IsChecked;
+        }
+
+        return !isChecked;
+    }
+
+    private void SetVisibility(bool visible)
     {
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
         foreach (var r in renderers)
-            r.enabled = false; 
+        {
+            r.enabled = visible;
+        }
     }
 }
