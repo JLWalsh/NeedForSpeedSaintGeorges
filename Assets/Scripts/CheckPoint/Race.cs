@@ -8,7 +8,6 @@ public class Race : MonoBehaviour {
     {
         NOT_STARTED,
         STARTED,
-        LOST,
         WON,
     }
 
@@ -39,6 +38,7 @@ public class Race : MonoBehaviour {
         currentTime = 0;
         state = RaceState.NOT_STARTED;
         startCheckpoint.gameObject.SetActive(false);
+        startCheckpoint.Reset();
     }
 
     void Update () {
@@ -46,6 +46,7 @@ public class Race : MonoBehaviour {
             return;
 
         currentTime += Time.deltaTime;
+        print(currentTime);
 
         if (!startCheckpoint.IsCourseCompleted())
             return;
@@ -53,8 +54,12 @@ public class Race : MonoBehaviour {
         if(currentTime <= maxWinTime)
         {
             state = RaceState.WON;
+            print("GOOD SHIT");
+            // TODO afficher message course reussie
         } else {
-            state = RaceState.LOST;
+            print("RIP");
+            Reset();
+            // TODO afficher message course echouee
         }
-	}
+    }
 }

@@ -30,6 +30,16 @@ public class CheckpointCheck : MonoBehaviour {
         }
     }
 
+    public void Reset()
+    {
+        isChecked = false;
+
+        if(nextCheckpoint != null)
+        {
+            nextCheckpoint.Reset();
+        }
+    }
+
     private void Update()
     {
         UpdateVisibility();
