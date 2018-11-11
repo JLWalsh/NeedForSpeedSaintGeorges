@@ -6,8 +6,11 @@ using System.Linq;
 public class Destroyable : MonoBehaviour {
 
     public float knockSpeed = 100f;
+    public AudioClip knockSound;
 
     private static readonly string DESTROY_FOR_TAG = "Player";
+
+    private AudioSource backgroundAudio;
 
     private void Awake() {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
@@ -23,9 +26,19 @@ public class Destroyable : MonoBehaviour {
         SetCollidersTrigger(true);
     }
 
+    private void Start() {
+        backgroundAudio = GameObject.FindGameObjectWithTag("EffectsAudio").GetComponent<AudioSource>();
+    }
+
     private void SetCollidersTrigger(bool isTrigger) {
         foreach (Collider collider in GetComponents<Collider>())
             collider.isTrigger = isTrigger;
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if(collision.collider.tag == DESTROY_FOR_TAG) {
+            backgroundAudio.PlayOneShot(knockSound);
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -40,6 +53,7 @@ public class Destroyable : MonoBehaviour {
             rigidbody.AddForce(forceDirection * knockSpeed);
 
             SetCollidersTrigger(false);
+
         }
     }
 
