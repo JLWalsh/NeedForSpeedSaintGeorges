@@ -46,7 +46,6 @@ public class Race : MonoBehaviour {
             return;
 
         currentTime += Time.deltaTime;
-        print(currentTime);
 
         if (!startCheckpoint.IsCourseCompleted())
             return;
@@ -54,10 +53,8 @@ public class Race : MonoBehaviour {
         if(currentTime <= maxWinTime)
         {
             state = RaceState.WON;
-            print("GOOD SHIT");
             // TODO afficher message course reussie
         } else {
-            print("RIP");
             Reset();
             // TODO afficher message course echouee
         }
