@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CheckpointCheck : MonoBehaviour {
 
+    private AudioSource sonCheckpoint;
     public CheckpointCheck nextCheckpoint;
     public CheckpointCheck previousCheckpoint;
 
@@ -13,11 +14,13 @@ public class CheckpointCheck : MonoBehaviour {
 
     private bool isChecked = false;
     private bool visible = true;
+    private bool son = false;
 
     public bool IsChecked { get { return isChecked; } }
 
     private void Start()
     {
+        sonCheckpoint = GetComponentInChildren<AudioSource>();
         UpdateVisibility();
 
         if (nextCheckpoint != null)
@@ -42,6 +45,11 @@ public class CheckpointCheck : MonoBehaviour {
 
     private void Update()
     {
+        if (son == true)
+        {
+            sonCheckpoint.Play();
+            son = false;
+        }
         UpdateVisibility();
     }
 
@@ -61,7 +69,7 @@ public class CheckpointCheck : MonoBehaviour {
         if(other.gameObject.tag == "Player" && CanBeChecked())
         {
             isChecked = true;
-
+            son = true;
             SetVisibility(false);
         }
     }
@@ -80,9 +88,9 @@ public class CheckpointCheck : MonoBehaviour {
     private bool CanBeChecked()
     {
         if (previousCheckpoint == null)
-            return true;
+            return !isChecked;
 
-        return previousCheckpoint.IsChecked;
+        return previousCheckpoint.IsChecked && !isChecked;
     }
 
     private bool CanRender()
