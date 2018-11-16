@@ -36,6 +36,8 @@ public class CheckpointCheck : MonoBehaviour {
     public void Reset()
     {
         isChecked = false;
+        visible = true;
+        SetVisibility(visible);
 
         if(nextCheckpoint != null)
         {
@@ -83,6 +85,30 @@ public class CheckpointCheck : MonoBehaviour {
             return nextCheckpoint.IsCourseCompleted();
 
         return true;
+    }
+
+    public CheckpointCheck FindLastChecked()
+    {
+        if (!isChecked)
+            return null;
+
+        if (nextCheckpoint == null)
+            return this;
+
+        if(nextCheckpoint.isChecked)
+        {
+            return nextCheckpoint.FindLastChecked();
+        }
+
+         return this;
+    }
+
+    public Quaternion GetRotationTowardsNext()
+    {
+        if (!nextCheckpoint)
+            return transform.rotation;
+
+        return Quaternion.LookRotation(nextCheckpoint.transform.position - transform.position);
     }
 
     private bool CanBeChecked()

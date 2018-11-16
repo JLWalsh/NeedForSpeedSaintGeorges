@@ -20,10 +20,12 @@ public class Race : MonoBehaviour {
 
     private RaceState state = RaceState.NOT_STARTED;
     private float currentTime;
+    private GameObject player;
 
     private void Start()
     {
         startCheckpoint.gameObject.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("MainPlayer");
     }
 
     public void Begin()
@@ -37,8 +39,8 @@ public class Race : MonoBehaviour {
     {
         currentTime = 0;
         state = RaceState.NOT_STARTED;
-        startCheckpoint.gameObject.SetActive(false);
         startCheckpoint.Reset();
+        startCheckpoint.gameObject.SetActive(false);
     }
 
     void Update () {
@@ -46,6 +48,11 @@ public class Race : MonoBehaviour {
             return;
 
         currentTime += Time.deltaTime;
+
+        if(Input.GetButton("Respawn"))
+        {
+            RespawnInRace();
+        }
 
         if (!startCheckpoint.IsCourseCompleted())
             return;
@@ -57,6 +64,19 @@ public class Race : MonoBehaviour {
         } else {
             Reset();
             // TODO afficher message course echouee
+        }
+    }
+
+    private void RespawnInRace()
+    {
+        CheckpointCheck lastChecked = startCheckpoint.FindLastChecked();
+
+        if (lastChecked)
+        {
+            player.transform.position = lastChecked.transform.position + Vector3.up * 2f;
+            player.transform.rotation = lastChecked.GetRotationTowardsNext();
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
     }
 }
