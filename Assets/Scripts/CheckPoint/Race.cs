@@ -51,15 +51,7 @@ public class Race : MonoBehaviour {
 
         if(Input.GetButton("Respawn"))
         {
-            CheckpointCheck lastChecked = startCheckpoint.FindLastChecked();
-
-            if(lastChecked)
-            {
-                player.transform.position = lastChecked.transform.position + Vector3.up * 2f;
-                player.transform.rotation = lastChecked.GetRotationTowardsNext();
-                player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            }
+            RespawnInRace();
         }
 
         if (!startCheckpoint.IsCourseCompleted())
@@ -72,6 +64,19 @@ public class Race : MonoBehaviour {
         } else {
             Reset();
             // TODO afficher message course echouee
+        }
+    }
+
+    private void RespawnInRace()
+    {
+        CheckpointCheck lastChecked = startCheckpoint.FindLastChecked();
+
+        if (lastChecked)
+        {
+            player.transform.position = lastChecked.transform.position + Vector3.up * 2f;
+            player.transform.rotation = lastChecked.GetRotationTowardsNext();
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
     }
 }
