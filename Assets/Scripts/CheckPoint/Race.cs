@@ -57,14 +57,13 @@ public class Race : MonoBehaviour {
             RespawnInRace();
         }
 
-        if (!startCheckpoint.IsCourseCompleted())
-            return;
-
-        if(currentTime <= maxWinTime)
+        if(currentTime <= maxWinTime && startCheckpoint.IsCourseCompleted())
         {
             state = RaceState.WON;
             // TODO afficher message course reussie
-        } else {
+        }
+
+        if (currentTime >= maxWinTime && !startCheckpoint.IsCourseCompleted()) {
             Reset();
             // TODO afficher message course echouee
         }
