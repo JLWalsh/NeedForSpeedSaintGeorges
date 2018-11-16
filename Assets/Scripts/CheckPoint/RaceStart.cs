@@ -23,6 +23,7 @@ public class RaceStart : MonoBehaviour {
             player.transform.position = transform.position;
             player.transform.rotation = transform.rotation;
             playerRigidbody.velocity = Vector3.zero;
+            playerRigidbody.angularVelocity = Vector3.zero;
 
             race.Begin();
         }
@@ -31,10 +32,10 @@ public class RaceStart : MonoBehaviour {
     private bool CanStartRace()
     {
         if (!previousRace) {
-            return race.State != Race.RaceState.WON;
+            return race.State != Race.RaceState.WON && race.State != Race.RaceState.STARTED;
         }
 
-        return previousRace.State == Race.RaceState.WON && race.State != Race.RaceState.WON;
+        return previousRace.State == Race.RaceState.WON && race.State != Race.RaceState.WON && race.State != Race.RaceState.STARTED;
     }
 
 }
