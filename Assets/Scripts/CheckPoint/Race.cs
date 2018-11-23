@@ -16,14 +16,17 @@ public class Race : MonoBehaviour {
     public string raceName;
 
     public RaceState State { get { return state; } }
-    public float CurrentTime { get { return currentTime; } }
+    public float TimeRemaining { get { return maxWinTime - currentTime; } }
+    public float RelativeTimeRemaining { get { return 1f - (currentTime / maxWinTime);  } }
 
     private RaceState state = RaceState.NOT_STARTED;
     private float currentTime;
+    private RaceUI raceUI;
     private GameObject player;
 
     private void Start()
     {
+        raceUI = FindObjectOfType<RaceUI>();
         startCheckpoint.gameObject.SetActive(false);
         player = GameObject.FindGameObjectWithTag("MainPlayer");
     }
@@ -31,8 +34,8 @@ public class Race : MonoBehaviour {
     public void Begin()
     {
         startCheckpoint.gameObject.SetActive(true);
-
         state = RaceState.STARTED;
+        raceUI.RenderFor(this);
     }
 
     public void Reset()
@@ -54,14 +57,13 @@ public class Race : MonoBehaviour {
             RespawnInRace();
         }
 
-        if (!startCheckpoint.IsCourseCompleted())
-            return;
-
-        if(currentTime <= maxWinTime)
+        if(currentTime <= maxWinTime && startCheckpoint.IsCourseCompleted())
         {
             state = RaceState.WON;
             // TODO afficher message course reussie
-        } else {
+        }
+
+        if (currentTime >= maxWinTime && !startCheckpoint.IsCourseCompleted()) {
             Reset();
             // TODO afficher message course echouee
         }

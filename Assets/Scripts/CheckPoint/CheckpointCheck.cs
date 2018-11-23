@@ -37,6 +37,7 @@ public class CheckpointCheck : MonoBehaviour {
     {
         isChecked = false;
         visible = true;
+        son = false;
         SetVisibility(visible);
 
         if(nextCheckpoint != null)
