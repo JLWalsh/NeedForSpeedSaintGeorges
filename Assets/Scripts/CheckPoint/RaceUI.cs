@@ -8,6 +8,8 @@ public class RaceUI : MonoBehaviour {
     public TextMeshProUGUI timeRemainingText;
     public Color hasTimeColor;
     public Color outOfTimeColor;
+    public TextMeshProUGUI tempsDepart;
+    
 
     private Race currentRace;
 

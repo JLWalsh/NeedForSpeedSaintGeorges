@@ -58,10 +58,10 @@ public class RaceStart : MonoBehaviour {
     private bool CanStartRace()
     {
         if (!previousRace) {
-            return race.State != Race.RaceState.WON && race.State != Race.RaceState.STARTED;
+            return race.State == Race.RaceState.NOT_STARTED;
         }
 
-        return previousRace.State == Race.RaceState.WON && race.State != Race.RaceState.WON && race.State != Race.RaceState.STARTED;
+        return previousRace.State == Race.RaceState.WON && race.State == Race.RaceState.NOT_STARTED;
     }
 
 }

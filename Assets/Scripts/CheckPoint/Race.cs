@@ -9,11 +9,14 @@ public class Race : MonoBehaviour {
         NOT_STARTED,
         STARTED,
         WON,
+        STARTING,
     }
 
     public CheckpointCheck startCheckpoint;
     public float maxWinTime;
     public string raceName;
+    public float temps;
+    public GameObject messagePrefab;
 
     public RaceState State { get { return state; } }
     public float TimeRemaining { get { return maxWinTime - currentTime; } }
@@ -23,17 +26,19 @@ public class Race : MonoBehaviour {
     private float currentTime;
     private RaceUI raceUI;
     private GameObject player;
+    private float compteurDepart;
 
     private void Start()
-    {
+    {      
         raceUI = FindObjectOfType<RaceUI>();
         startCheckpoint.gameObject.SetActive(false);
     }
 
     public void Begin()
     {
+        compteurDepart = temps;
         startCheckpoint.gameObject.SetActive(true);
-        state = RaceState.STARTED;
+        state = RaceState.STARTING;
         raceUI.RenderFor(this);
     }
 
@@ -46,6 +51,29 @@ public class Race : MonoBehaviour {
     }
 
     void Update () {
+        if (state == RaceState.STARTING)
+        {
+            int tempsRestant = Mathf.FloorToInt(compteurDepart);
+            if(tempsRestant == 0)
+            {
+                raceUI.tempsDepart.text = "GO!";
+            } else
+            {
+                raceUI.tempsDepart.text = tempsRestant.ToString();
+            }
+            if (player == null)
+            {
+                player = GameObject.FindGameObjectWithTag("MainPlayer");
+            }
+            player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            compteurDepart -= Time.deltaTime;
+            if (compteurDepart <= 0)
+            {
+                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                raceUI.tempsDepart.text = "";
+                state = RaceState.STARTED;
+            }
+        }
         if (state != RaceState.STARTED)
             return;
 
@@ -59,12 +87,18 @@ public class Race : MonoBehaviour {
         if(currentTime <= maxWinTime && startCheckpoint.IsCourseCompleted())
         {
             state = RaceState.WON;
-            // TODO afficher message course reussie
+            GameObject Message = Instantiate(messagePrefab);
+            messageFin msg = Message.GetComponent<messageFin>();
+            msg.nombreSecondes = 3;
+            msg.messageCourse.text = "Course reussie!";
         }
 
         if (currentTime >= maxWinTime && !startCheckpoint.IsCourseCompleted()) {
             Reset();
-            // TODO afficher message course echouee
+            GameObject Message = Instantiate(messagePrefab);
+            messageFin msg = Message.GetComponent<messageFin>();
+            msg.nombreSecondes = 3;
+            msg.messageCourse.text = "Course perdue! Reassayez!";
         }
     }
 
