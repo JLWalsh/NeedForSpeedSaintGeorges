@@ -17,12 +17,15 @@ public class RaceStart : MonoBehaviour {
         isVisible = CanStartRace();
         SetVisibility();
         texte.text = race.raceName;
-        player = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<Transform>();
-        playerRigidbody = player.GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<Transform>();
+            playerRigidbody = player.GetComponent<Rigidbody>();
+        }
         if (other.gameObject.tag == "Player" && CanStartRace())
         {
             player.transform.position = transform.position;

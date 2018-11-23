@@ -28,7 +28,6 @@ public class Race : MonoBehaviour {
     {
         raceUI = FindObjectOfType<RaceUI>();
         startCheckpoint.gameObject.SetActive(false);
-        player = GameObject.FindGameObjectWithTag("MainPlayer");
     }
 
     public void Begin()
@@ -72,7 +71,10 @@ public class Race : MonoBehaviour {
     private void RespawnInRace()
     {
         CheckpointCheck lastChecked = startCheckpoint.FindLastChecked();
-
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("MainPlayer");
+        }
         if (lastChecked)
         {
             player.transform.position = lastChecked.transform.position + Vector3.up * 2f;
