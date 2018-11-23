@@ -6,12 +6,17 @@ public class RaceStart : MonoBehaviour {
 
     public Race race;
     public Race previousRace;
+    public TextMesh texte;
     
     private Transform player;
     private Rigidbody playerRigidbody;
+    private bool isVisible;
 
     private void Start()
     {
+        isVisible = CanStartRace();
+        SetVisibility();
+        texte.text = race.raceName;
         player = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<Transform>();
         playerRigidbody = player.GetComponent<Rigidbody>();
     }
@@ -26,6 +31,24 @@ public class RaceStart : MonoBehaviour {
             playerRigidbody.angularVelocity = Vector3.zero;
 
             race.Begin();
+        }
+    }
+
+    private void Update()
+    {
+        if (isVisible != CanStartRace())
+        {
+            isVisible = CanStartRace();
+            SetVisibility();
+        }
+    }
+
+    private void SetVisibility()
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        foreach (var r in renderers)
+        {
+            r.enabled = isVisible;
         }
     }
 
