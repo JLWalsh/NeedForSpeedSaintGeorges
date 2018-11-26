@@ -648,7 +648,7 @@ Prefab:
     - target: {fileID: 114143329543999770, guid: 2e7f5977ab2245d4bbd3d981c37fdad8,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224363548819243602, guid: 2e7f5977ab2245d4bbd3d981c37fdad8,
         type: 2}
@@ -830,6 +830,31 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 368285406}
+    - target: {fileID: 114143329543999770, guid: 2e7f5977ab2245d4bbd3d981c37fdad8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114143329543999770, guid: 2e7f5977ab2245d4bbd3d981c37fdad8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114143329543999770, guid: 2e7f5977ab2245d4bbd3d981c37fdad8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 624361207}
+    - target: {fileID: 114143329543999770, guid: 2e7f5977ab2245d4bbd3d981c37fdad8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: set_interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 114143329543999770, guid: 2e7f5977ab2245d4bbd3d981c37fdad8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e7f5977ab2245d4bbd3d981c37fdad8, type: 2}
   m_IsPrefabAsset: 0
@@ -844,6 +869,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 550811408}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &624361207 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114143329543999770, guid: 2e7f5977ab2245d4bbd3d981c37fdad8,
+    type: 2}
+  m_PrefabInternal: {fileID: 550811408}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &786319367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1133,7 @@ MonoBehaviour:
     topSpeed: 1
     acceleration: 0
   drivingSceneName: SaintGeorges
-  turnSpeed: 0.5
+  turnSpeed: 25
 --- !u!4 &1369330479
 Transform:
   m_ObjectHideFlags: 0
