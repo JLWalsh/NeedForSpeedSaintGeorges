@@ -29,7 +29,7 @@ public class CarSelector : MonoBehaviour {
     }
 
     void Update () {
-        displayedCar.transform.Rotate(Vector3.up * turnSpeed);
+        displayedCar.transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime);
 	}
 
     public void ViewNextCar() {
